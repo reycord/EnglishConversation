@@ -30,14 +30,14 @@
 	<body style="background-color: #999999;">
 		<div class="limiter">
 			<div class="container-login100">
-				<div class="login100-more" style="background-image: url('vendors_registration/images/bg-01.jpg');"></div>
+				<div class="login100-more" style="background-image: url('<?php echo base_url();?>vendors_registration/images/bg-01.jpg');"></div>
 
 				<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-					<form class="login100-form validate-form" action="<?php echo base_url('registration/checkRegistration')?>" method="POST" >
-						<p style="color:#d42a38; text-align: center; width: 364px;"><?php echo (isset($err_message) ? $err_message : '') ?></p>
+					<form class="login100-form validate-form" action="<?php echo base_url('registration/checkRegistration/')?>" method="POST" >
 						<span class="login100-form-title p-b-59">
 							Sign Up
 						</span>
+						<p style="color:#d42a38; text-align: center; width: 364px;"><?php echo (isset($err_message) ? $err_message : '') ?></p>
 						<?php echo form_error('email'); ?>
 						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 							<span class="label-input100">Email</span>
@@ -71,7 +71,7 @@
                         
 							<div class="wrap-login100-form-btn">
 								<div class="login100-form-bgbtn"></div>
-								<button type="submit" class="login100-form-btn" name="register">
+								<button type="submit" class="login100-form-btn" name="signin">
 									Sign Up
 								</button>
 							</div>

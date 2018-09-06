@@ -141,7 +141,7 @@
 		<aside id="colorlib-hero">
 			<div class="flexslider">
 				<ul class="slides">
-			   	    <li style="background-image: url(vendors/images/img_bg_5.jpg);">
+			   	    <li style="background-image: url('<?php echo base_url();?>vendors/images/img_bg_5.jpg');">
 			   		    <div class="container-fluid">
 			   			    <div class="row">
 				   			    <div class="col-md-8 col-sm-12 col-md-offset-1 col-xs-12 col-md-pull-1 slider-text">

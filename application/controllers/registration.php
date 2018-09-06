@@ -3,7 +3,6 @@ class Registration extends My_Controller {
 
     function __construct(){
         parent::__construct();
-        $this->load->helper('url');
         $this->load->library('session');
         $this->load->library('form_validation');
         $this->load->model('registration_model');
@@ -15,17 +14,17 @@ class Registration extends My_Controller {
     }
 
     public function checkRegistration(){
-        if (isset($_POST['register'])){
+        if (isset($_POST['signin'])){
             //Check validate field data
             $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
             $this->form_validation->set_rules('username', 'Username', 'trim|required');
-            $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]|max_length[15]|callback_chk_password_expression');
-            $this->form_validation->set_rules('repeat-password', 'Repeat Password', 'trim|required|min_length[6]|max_length[15]|matches[password]|callback_chk_password_expression');
+            $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]|max_length[25]|callback_chk_password_expression');
+            $this->form_validation->set_rules('repeat-password', 'Repeat Password', 'trim|required|min_length[6]|max_length[25]|matches[password]|callback_chk_password_expression');
             $this->form_validation->set_error_delimiters('<p style="color:#d42a38">', '</p>');
             $data = array(
                 'err_message' => '',
             );
-            //Add data into table M_USER
+
             if ($this->form_validation->run() === TRUE){
                 $email = $this->input->post('email');
                 $userName = $this->input->post('username');
@@ -39,7 +38,8 @@ class Registration extends My_Controller {
                         'admin_flag' => '0',
                         'del_fg' => '0'
                     );
-
+                    
+                    //Add data into table M_USER
                     $this->db->insert('m_user', $data);
 
                     //Redirect to Login Page
@@ -71,8 +71,8 @@ class Registration extends My_Controller {
     {
         $user = $this->registration_model->checkEmail($email);
         if ($user === null) {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 }
