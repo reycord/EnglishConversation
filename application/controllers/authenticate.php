@@ -58,6 +58,7 @@ class Authenticate extends My_Controller {
         if ($user === null) {
             return false;
         }
+        
         $this->session->set_userdata('user', $user);
         return true;
     }

@@ -66,7 +66,17 @@
 							<p>Welcome to English Conversation</p>
 						</div>
 						<div class="col-xs-6 col-md-push-2 text-right">
-							<p class="btn-apply"><a href="<?php echo base_url(); ?>authenticate">Sign up/Sign in</a></p>
+							<?php if(isset($data['user_name']) && $data['user_name'] != null) { ?>
+								<li class="has-dropdown">
+									<a href="#"><?php echo $data['user_name'] ?></a>
+									<ul class="dropdown">
+										<li><a href="<?php echo base_url(); ?>">Sign out</a></li>
+										<li><a href="<?php echo base_url(); ?>modify_user">Modify user</a></li>
+									</ul>
+								</li>
+							<?php } else { ?>
+								<p class="btn-apply"><a href="<?php echo base_url(); ?>authenticate">Sign up/Sign in</a></p>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
