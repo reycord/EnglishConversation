@@ -34,7 +34,7 @@ class Registration extends My_Controller {
                     $data = array(
                         'user_name' => $_POST['username'],
                         'email' => $_POST['email'],
-                        'password' => $_POST['password'],
+                        'password' => md5($_POST['password']),
                         'admin_flag' => '0',
                         'del_fg' => '0'
                     );

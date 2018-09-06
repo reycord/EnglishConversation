@@ -15,7 +15,7 @@ class authenticate_model extends My_Model
         $this->db->select('admin_flag');
         $this->db->from('m_user');
         $this->db->where('email', $email);
-        $this->db->where('password', $password);
+        $this->db->where('password', md5($password));
         $this->db->where('del_fg', '0');
         $query = $this->db->get();
         $result = $query->result_array();

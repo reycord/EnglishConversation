@@ -20,7 +20,7 @@ class Migration_Init extends CI_Migration{
             USER_ID serial  NOT NULL,
             USER_NAME varchar(25) NULL,
             EMAIL varchar(255) NULL,
-            PASSWORD varchar(25) NULL,
+            PASSWORD text NULL,
             BIRTH_DATE varchar(10) NULL,
             GENDER varchar(15) NULL,
             PHONE_NUMBER int NULL,
