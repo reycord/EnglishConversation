@@ -35,7 +35,7 @@
 				<div class="login100-more" style="background-image: url('<?php echo base_url();?>vendors_registration/images/bg-01.jpg');"></div>
 
 				<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-					<form class="login100-form validate-form" action="<?php echo base_url('registration/checkRegistration/')?>" method="POST" >
+					<form class="login100-form validate-form" action="<?php echo base_url('modifyuser/checkModify/')?>" method="POST" >
 						<span class="login100-form-title p-b-59">
 							Sign Up
 						</span>

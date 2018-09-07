@@ -17,7 +17,7 @@ class Registration extends My_Controller {
         if (isset($_POST['signin'])){
             //Check validate field data
             $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-            $this->form_validation->set_rules('username', 'Username', 'trim|required');
+            $this->form_validation->set_rules('username', 'User Name', 'trim|required');
             $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]|max_length[25]|callback_chk_password_expression');
             $this->form_validation->set_rules('repeat-password', 'Repeat Password', 'trim|required|min_length[6]|max_length[25]|matches[password]|callback_chk_password_expression');
             $this->form_validation->set_error_delimiters('<p style="color:#d42a38">', '</p>');
