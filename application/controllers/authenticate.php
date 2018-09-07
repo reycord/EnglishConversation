@@ -65,14 +65,4 @@ class Authenticate extends My_Controller {
         }
         return $user;
     }
-
-    public function signout()
-    {
-        $user = $this->session->userdata('user');
-        if (isset($user)) {
-            $this->session->unset_userdata('user');
-            // $this->session->sess_destroy();
-        }
-        redirect('/signin');
-    }
 }

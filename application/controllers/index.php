@@ -17,4 +17,14 @@ class Index extends My_Controller {
         }
         $this->load->view('index', $data);
     }
+
+    public function signout()
+    {
+        $user = $this->session->userdata('user');
+        if (isset($user)) {
+            $this->session->unset_userdata('user');
+            // $this->session->sess_destroy();
+        }
+        redirect('authenticate', "refresh");
+    }
 }
