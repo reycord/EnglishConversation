@@ -26,8 +26,13 @@ class Authenticate extends My_Controller {
                 $email = $this->input->post('email');
                 $password = $this->input->post('password');
                 $result = $this->compareInfo($email, $password);
-                if ($result) {
+                if ($result != null) {
                     //Redirect to Home Page
+                    $data = array('user_name' => $result['user_name'],
+                                    'email' => $result['email'],
+                                    'admin_flag' => $result['admin_flag']
+                                );
+                    $this->session->set_userdata('user', $data);
                     redirect('index', 'refresh');
                 }else{
                     $data['err_message'] = "Username or password is invalid!";
@@ -56,11 +61,9 @@ class Authenticate extends My_Controller {
     {
         $user = $this->authenticate_model->checkLogin($email, $password);
         if ($user === null) {
-            return false;
+            return null;
         }
-        
-        $this->session->set_userdata('user', $user);
-        return true;
+        return $user;
     }
 
     public function signout()
