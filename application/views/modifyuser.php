@@ -37,29 +37,22 @@
 						<span class="login100-form-title p-b-59">
 							Sign Up
 						</span>
-						<p style="color:#d42a38; text-align: center; width: 364px;"><?php echo (isset($err_message) ? $err_message : '') ?></p>
-						<?php echo form_error('email'); ?>
-						<div class="wrap-input100 validate-input">
-							<span class="label-input100">Email</span>
-							<input class="input100" type="text" name="email" placeholder="Email addess...">
-							<span class="focus-input100"></span>
-						</div>
 						<?php echo form_error('username'); ?>
 						<div class="wrap-input100 validate-input">
 							<span class="label-input100">User Name</span>
 							<input class="input100" type="text" name="username" placeholder="User Name...">
 							<span class="focus-input100"></span>
 						</div>
-						<?php echo form_error('password'); ?>
+                        <?php echo form_error('birthday'); ?>
 						<div class="wrap-input100 validate-input">
-							<span class="label-input100">Password</span>
-							<input class="input100" type="password" name="password" placeholder="*************">
+							<span class="label-input100">Birthday</span>
+							<input class="input100" type="text" name="username" placeholder="Birthday...">
 							<span class="focus-input100"></span>
 						</div>
-						<?php echo form_error('repeat-password'); ?>
+                        <?php echo form_error('username'); ?>
 						<div class="wrap-input100 validate-input">
-							<span class="label-input100">Repeat Password</span>
-							<input class="input100" type="password" name="repeat-password" placeholder="*************">
+							<span class="label-input100">User Name</span>
+							<input class="input100" type="text" name="username" placeholder="User Name...">
 							<span class="focus-input100"></span>
 						</div>
 
@@ -72,14 +65,9 @@
 							<div class="wrap-login100-form-btn">
 								<div class="login100-form-bgbtn"></div>
 								<button type="submit" class="login100-form-btn" name="signin">
-									Sign Up
+									Modify
 								</button>
 							</div>
-
-							<a href="<?php echo base_url(); ?>authenticate" class="dis-block txt3 hov1 p-t-10 p-b-10">
-								Sign in
-								<i class="fa fa-long-arrow-right m-l-5"></i>
-							</a>
 						</div>
 					</form>
 				</div>
