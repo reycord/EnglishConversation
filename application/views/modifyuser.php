@@ -25,6 +25,8 @@
 <!--===============================================================================================-->
 		<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>vendors_registration/css/util.css">
 		<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>vendors_registration/css/main.css">
+        <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>vendors_registration/css/datepicker.css">
+        <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>vendors_registration/css/datepicker.min.css">
 	</head>
 
 	<body style="background-color: #999999;">
@@ -46,13 +48,19 @@
                         <?php echo form_error('birthday'); ?>
 						<div class="wrap-input100 validate-input">
 							<span class="label-input100">Birthday</span>
-							<input class="input100" type="text" name="username" placeholder="Birthday...">
+							<input class="input100" data-language='en' type="text" name="birthday" id="datepicker" placeholder="dd/mm/yyyy...">
 							<span class="focus-input100"></span>
 						</div>
-                        <?php echo form_error('username'); ?>
+                        <?php echo form_error('phone_number'); ?>
 						<div class="wrap-input100 validate-input">
-							<span class="label-input100">User Name</span>
-							<input class="input100" type="text" name="username" placeholder="User Name...">
+							<span class="label-input100">Phone Number</span>
+							<input class="input100" type="text" name="phone_number" placeholder="Phone Number...">
+							<span class="focus-input100"></span>
+						</div>
+                        <?php echo form_error('address'); ?>
+						<div class="wrap-input100 validate-input">
+							<span class="label-input100">Address</span>
+							<input class="input100" type="text" name="address" placeholder="Address...">
 							<span class="focus-input100"></span>
 						</div>
 
@@ -64,7 +72,7 @@
                         
 							<div class="wrap-login100-form-btn">
 								<div class="login100-form-bgbtn"></div>
-								<button type="submit" class="login100-form-btn" name="signin">
+								<button type="submit" class="login100-form-btn" name="modify">
 									Modify
 								</button>
 							</div>
@@ -91,5 +99,13 @@
 <!--===============================================================================================-->
 		<script type="text/javascript" src="<?php echo base_url(); ?>vendors_registration/js/main.js"></script>
 
+        <!-- <script type="text/javascript" src="<?php echo base_url(); ?>vendors_registration/js/datepicker.js"></script> -->
+        <script type="text/javascript" src="<?php echo base_url(); ?>vendors_registration/js/datepicker.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>vendors_registration/js/datepicker.en.js"></script>    
+        <script>
+			$(function() {
+				$( "#datepicker" ).datepicker();
+			});
+		</script>
 	</body>
 </html>
