@@ -72,7 +72,7 @@
 											<a href="#"><?php echo "Hello " . $user_name ?></a>
 											<ul class="dropdown">
 												<li><a href="<?php echo base_url('index/signout'); ?>">Sign out</a></li>
-												<li><a href="<?php echo base_url(); ?>modify_user">Modify user</a></li>
+												<li><a href="<?php echo base_url(); ?>modifyuser">Modify user</a></li>
 											</ul>
 										</li>
 									</ul>
