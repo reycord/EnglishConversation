@@ -42,25 +42,25 @@
 						<?php echo form_error('username'); ?>
 						<div class="wrap-input100 validate-input">
 							<span class="label-input100">User Name</span>
-							<input class="input100" type="text" name="username" placeholder="User Name...">
+							<input class="input100" type="text" name="username" value="<?=set_value('username')?>" placeholder="User Name...">
 							<span class="focus-input100"></span>
 						</div>
                         <?php echo form_error('birthday'); ?>
 						<div class="wrap-input100 validate-input">
 							<span class="label-input100">Birthday</span>
-							<input class="input100" data-language='en' type="text" name="birthday" id="datepicker" placeholder="dd/mm/yyyy...">
+							<input class="input100" data-language='en' type="text" value="<?=set_value('birthday')?>" name="birthday" id="datepicker" placeholder="dd/mm/yyyy...">
 							<span class="focus-input100"></span>
 						</div>
                         <?php echo form_error('phone_number'); ?>
 						<div class="wrap-input100 validate-input">
 							<span class="label-input100">Phone Number</span>
-							<input class="input100" type="text" name="phone_number" placeholder="Phone Number...">
+							<input class="input100" type="text" name="phone_number" value="<?=set_value('phone_number')?>" placeholder="Phone Number...">
 							<span class="focus-input100"></span>
 						</div>
                         <?php echo form_error('address'); ?>
 						<div class="wrap-input100 validate-input">
 							<span class="label-input100">Address</span>
-							<input class="input100" type="text" name="address" placeholder="Address...">
+							<input class="input100" type="text" name="address" value="<?=set_value('address')?>" placeholder="Address...">
 							<span class="focus-input100"></span>
 						</div>
 

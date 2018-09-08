@@ -41,13 +41,13 @@
 						<?php echo form_error('email'); ?>
 						<div class="wrap-input100 validate-input">
 							<span class="label-input100">Email</span>
-							<input class="input100" type="text" name="email" placeholder="Email addess...">
+							<input class="input100" type="text" name="email" value="<?=set_value('email')?>" placeholder="Email addess...">
 							<span class="focus-input100"></span>
 						</div>
 						<?php echo form_error('username'); ?>
 						<div class="wrap-input100 validate-input">
 							<span class="label-input100">User Name</span>
-							<input class="input100" type="text" name="username" placeholder="User Name...">
+							<input class="input100" type="text" name="username" value="<?=set_value('username')?>" placeholder="User Name...">
 							<span class="focus-input100"></span>
 						</div>
 						<?php echo form_error('password'); ?>
