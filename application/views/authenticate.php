@@ -36,16 +36,16 @@
 						</span>
 						<p style="color:#d42a38; text-align: center; width: 364px;"><?php echo (isset($err_message) ? $err_message : '') ?></p>
 						<?php echo form_error('email'); ?>
-						<div class="wrap-input100">
+						<div class="wrap-input100 validate-input">
+							<span class="label-input100">Email</span>
 							<input class="input100" value="<?=set_value('email')?>" type="text" name="email">
 							<span class="focus-input100"></span>
-							<span class="label-input100">Email</span>
 						</div>
 						<?php echo form_error('password'); ?>
-						<div class="wrap-input100">
+						<div class="wrap-input100 validate-input">
+							<span class="label-input100">Password</span>
 							<input class="input100" type="password" name="password">
 							<span class="focus-input100"></span>
-							<span class="label-input100">Password</span>
 						</div>
 
 						<div class="container-login100-form-btn">

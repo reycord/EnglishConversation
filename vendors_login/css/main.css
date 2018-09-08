@@ -291,23 +291,11 @@ iframe {
 }
 
 .label-input100 {
-  font-family: Montserrat-Regular;
+  font-family: Poppins-SemiBold;
   font-size: 18px;
   color: #999999;
   line-height: 1.2;
-
-  display: block;
-  position: absolute;
-  pointer-events: none;
-  width: 100%;
-  padding-left: 24px;
-  left: 0;
-  top: 30px;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
+  padding-left: 2px;
 }
 
 .input100 {
@@ -383,7 +371,7 @@ input.input100 {
   height: 48px;
 }
 
-.input100:focus + .focus-input100 + .label-input100 {
+/* .input100:focus + .focus-input100 + .label-input100 {
   top: 14px;
   font-size: 13px;
 }
@@ -395,6 +383,10 @@ input.input100 {
 .has-val + .focus-input100 + .label-input100 {
   top: 14px;
   font-size: 13px;
+} */
+
+.has-val.input100 + .focus-input100::before {
+  width: 100%;
 }
 
 /*==================================================================
