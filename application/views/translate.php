@@ -44,6 +44,7 @@
 
 	<!-- Theme style  -->
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>vendors/css/style.css">
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>vendors/css/main.css">
 
 	<!-- Modernizr JS -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>vendors/js/modernizr-2.6.2.min.js"></script>
@@ -92,9 +93,9 @@
 						</div>
 						<div class="col-md-10 text-right menu-1">
 							<ul>
-								<li class="active"><a href="<?php echo base_url(); ?>">Home</a></li>
+								<li><a href="<?php echo base_url(); ?>">Home</a></li>
                                 <li><a href="<?php echo base_url(); ?>history">History</a></li>
-                                <li><a href="<?php echo base_url(); ?>translate">Translate</a></li>
+                                <li  class="active"><a href="<?php echo base_url(); ?>translate">Translate</a></li>
 								<li class="has-dropdown">
 									<a href="#">Vocabulary</a>
 									<ul class="dropdown">
@@ -154,47 +155,48 @@
 		<aside id="colorlib-hero">
 			<div class="flexslider">
 				<ul class="slides">
-			   	    <li style="background-image: url('<?php echo base_url();?>vendors/images/img_bg_5.jpg');">
-			   		    <div class="container-fluid">
-			   			    <div class="row">
-				   			    <div class="col-md-8 col-sm-12 col-md-offset-1 col-xs-12 col-md-pull-1 slider-text">
-				   				    <div class="slider-text-inner">
-				   					    <div class="desc">
-                                            <div class="colorlib-search" style="margin-top:-125px">
-			                                    <div class="container">
-					                                <div class="col-md-12 search-wrap">
-						                                <div class="search-wrap-2">
-							                                <form method="post" class="colorlib-form">
-			              	                                    <div class="row">
-			                                                        <div class="col-md-9">
-			                                                            <div class="form-group">
-			                                                                <div class="form-field">
-			                                                                    <input type="text" id="search" class="form-control" placeholder="Keyword search">
-			                                                                </div>
-			                                                            </div>
-			                                                        </div>
-			                                                        <div class="col-md-3">
-			                                                            <input type="submit" name="submit" id="submit" value="Search Word" class="btn btn-primary btn-block">
-			                                                        </div>
-			                                                    </div>
-			                                                </form>
-		                                                </div>
-					                                </div>
-			                                    </div>
-		                                    </div>
-				   					    </div>
-				   				    </div>
-				   			    </div>
-				   		    </div>
+			   	    <li style="background-image: url('<?php echo base_url();?>vendors/images/blog-5.jpg');">
+			   		    <div class="container-contact100">
+                           <div class="wrap-contact100">
+			                    <form class="contact100-form validate-form flex-sb flex-w">
+				                    <span class="contact100-form-title">
+					                    Translate Word
+                                    </span>
+
+                                    <div class="wrap-input100 validate-input">
+                                        <textarea class="input100" name="source" placeholder="Write Us A Message"></textarea>
+                                        <span class="focus-input100"></span>
+                                    </div>
+
+                                    <div class="wrap-input100 validate-input">
+                                        <textarea class="input100" name="result" placeholder="Write Us A Message"></textarea>
+                                        <span class="focus-input100"></span>
+                                    </div>
+
+                                    <div class="container-contact100-form-btn">
+                                        <button type="button" id="translate_language" class="contact100-form-btn-translate">
+                                            English => Vietnamese
+                                        </button>
+                                        <button type="button" class="contact100-form-btn-translate">
+                                            Vietnamese => English
+                                        </button>
+                                        <button type="button" class="contact100-form-btn">
+                                            Translate
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
 			   		    </div>
-	                    <div class="gototop js-top">
-		                    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
-	                    </div>
 			   	    </li>
 			  	</ul>
 		  	</div>
 		</aside>
     </div>
+
+    <script type="text/javascript">
+        
+    </script>
+
 	<!-- jQuery -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>vendors/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -219,4 +221,3 @@
 
 	</body>
 </html>
-

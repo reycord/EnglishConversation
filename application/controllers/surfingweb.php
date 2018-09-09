@@ -1,5 +1,5 @@
 <?php
-class Translate extends My_Controller {
+class SurfingWeb extends My_Controller {
 
     function __construct(){
         parent::__construct();
@@ -15,6 +15,6 @@ class Translate extends My_Controller {
             $data['email'] = $getdata['email'];
             $data['admin_flag'] = $getdata['admin_flag'];
         }
-        $this->load->view('translate', $data);
+        $this->load->view('surfingweb', $data);
     }
 }

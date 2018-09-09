@@ -92,7 +92,7 @@
 						</div>
 						<div class="col-md-10 text-right menu-1">
 							<ul>
-								<li class="active"><a href="<?php echo base_url(); ?>">Home</a></li>
+								<li><a href="<?php echo base_url(); ?>">Home</a></li>
                                 <li><a href="<?php echo base_url(); ?>history">History</a></li>
                                 <li><a href="<?php echo base_url(); ?>translate">Translate</a></li>
 								<li class="has-dropdown">
@@ -143,7 +143,7 @@
                                         <li><a href="test_exam/advanced">Advanced</a></li>
 									</ul>
 								</li>
-								<li><a href="surfingweb">Surfing Web</a></li>
+								<li class="active"><a href="surfingweb">Surfing Web</a></li>
 								<li><a href="Q&A">Q&A</a></li>
 							</ul>
 						</div>
@@ -155,35 +155,10 @@
 			<div class="flexslider">
 				<ul class="slides">
 			   	    <li style="background-image: url('<?php echo base_url();?>vendors/images/img_bg_5.jpg');">
-			   		    <div class="container-fluid">
+			   		    <div class="container-fluid" style="margin-top: 140px">
 			   			    <div class="row">
-				   			    <div class="col-md-8 col-sm-12 col-md-offset-1 col-xs-12 col-md-pull-1 slider-text">
-				   				    <div class="slider-text-inner">
-				   					    <div class="desc">
-                                            <div class="colorlib-search" style="margin-top:-125px">
-			                                    <div class="container">
-					                                <div class="col-md-12 search-wrap">
-						                                <div class="search-wrap-2">
-							                                <form method="post" class="colorlib-form">
-			              	                                    <div class="row">
-			                                                        <div class="col-md-9">
-			                                                            <div class="form-group">
-			                                                                <div class="form-field">
-			                                                                    <input type="text" id="search" class="form-control" placeholder="Keyword search">
-			                                                                </div>
-			                                                            </div>
-			                                                        </div>
-			                                                        <div class="col-md-3">
-			                                                            <input type="submit" name="submit" id="submit" value="Search Word" class="btn btn-primary btn-block">
-			                                                        </div>
-			                                                    </div>
-			                                                </form>
-		                                                </div>
-					                                </div>
-			                                    </div>
-		                                    </div>
-				   					    </div>
-				   				    </div>
+				   			    <div class="col-md-8 col-sm-12 col-md-offset-1 col-xs-12 col-md-pull-1">
+                                   <iframe width="152%" height="600px" frameborder="0" src="http://www.latimes.com/"></iframe>
 				   			    </div>
 				   		    </div>
 			   		    </div>
