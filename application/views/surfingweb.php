@@ -145,7 +145,7 @@
 									</ul>
 								</li>
 								<li class="active"><a href="surfingweb">Surfing Web</a></li>
-								<li><a href="Q&A">Q&A</a></li>
+								<li><a href="questionandanswer">Q&A</a></li>
 							</ul>
 						</div>
 					</div>
