@@ -40,13 +40,11 @@
 						<div class="wrap-input100 validate-input">
 							<span class="label-input100">Email</span>
 							<input class="input100" value="<?=set_value('email')?>" type="text" name="email">
-							<span class="focus-input100"></span>
 						</div>
 						<?php echo form_error('password'); ?>
 						<div class="wrap-input100 validate-input">
 							<span class="label-input100">Password</span>
 							<input class="input100" type="password" name="password">
-							<span class="focus-input100"></span>
 						</div>
 
 						<div class="container-login100-form-btn">
