@@ -1,197 +1,342 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>English Conversation</title>
-    <link rel="shortcut icon" href="<?php echo base_url();?>vendors/images/image_title.ico" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+<!DOCTYPE html>
+<html lang="en">
 
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Favicon icon -->
+        <link rel="icon" sizes="16x16" href="<?php echo base_url();?>vendors/assets/images/image_title.ico">
+        <title>English Conversation</title>
+        <!-- Custom CSS -->
+        <link href="<?php echo base_url();?>vendors/assets/libs/flot/css/float-chart.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="<?php echo base_url();?>vendors/dist/css/style.min.css" rel="stylesheet">
+    </head>
 
-	<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>vendors/css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>vendors/css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>vendors/css/bootstrap.css">
-
-	<!-- Magnific Popup -->
-	<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>vendors/css/magnific-popup.css">
-
-	<!-- Flexslider  -->
-	<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>vendors/css/flexslider.css">
-
-	<!-- Owl Carousel -->
-	<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>vendors/css/owl.carousel.min.css">
-	<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>vendors/css/owl.theme.default.min.css">
-	
-	<!-- Flaticons  -->
-	<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>vendors/fonts/flaticon/font/flaticon.css">
-
-	<!-- Theme style  -->
-	<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>vendors/css/style.css">
-
-	<!-- Modernizr JS -->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendors/js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendors/js/respond.min.js"></script>
-	<![endif]-->
-
-	</head>
 	<body>
-		
-	<div class="colorlib-loader"></div>
-	<div id="page">
-		<nav class="colorlib-nav" role="navigation">
-			<div class="upper-menu">
-				<div class="container">
+		<!-- ============================================================== -->
+		<!-- Preloader - style you can find in spinners.css -->
+		<!-- ============================================================== -->
+		<div class="preloader">
+			<div class="lds-ripple">
+				<div class="lds-pos"></div>
+				<div class="lds-pos"></div>
+			</div>
+		</div>
+		<!-- ============================================================== -->
+		<!-- Main wrapper - style you can find in pages.scss -->
+		<!-- ============================================================== -->
+		<div id="main-wrapper">
+			<!-- ============================================================== -->
+			<!-- Topbar header - style you can find in pages.scss -->
+			<!-- ============================================================== -->
+			<header class="topbar" data-navbarbg="skin5">
+				<nav class="navbar top-navbar navbar-expand-md navbar-dark">
+					<div class="navbar-header" data-logobg="skin5">
+						<!-- This is for the sidebar toggle which is visible on mobile only -->
+						<a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+						<!-- ============================================================== -->
+						<!-- Logo -->
+						<!-- ============================================================== -->
+						<a class="navbar-brand" href="<?php echo base_url(); ?>">
+							<!-- Logo icon -->
+							<b class="logo-icon p-l-10">
+								<!-- Dark Logo icon -->
+								<img src="<?php echo base_url();?>vendors/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+							</b>
+							<!--End Logo icon -->
+							<!-- Logo text -->
+							<span class="logo-text">
+								<!-- dark Logo text -->
+								<img src="<?php echo base_url();?>vendors/assets/images/logo-text.jpg" alt="homepage" class="light-logo" />
+							</span>
+						</a>
+						<a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+					</div>
+					<!-- ============================================================== -->
+					<!-- End Logo -->
+					<!-- ============================================================== -->
+					<div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+						<!-- ============================================================== -->
+						<!-- toggle and nav items -->
+						<!-- ============================================================== -->
+						<ul class="navbar-nav float-left mr-auto">
+							<li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+							<!-- ============================================================== -->
+							<!-- create new -->
+							<!-- ============================================================== -->
+							<?php if(isset($admin_flag) && $admin_flag != 0) { ?>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
+									<span class="d-block d-md-none"><i class="fa fa-plus"></i></span>   
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href="#">Action</a>
+										<a class="dropdown-item" href="#">Another action</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#">Something else here</a>
+									</div>
+								</li>
+							<?php } ?>
+							<!-- ============================================================== -->
+							<!-- Search -->
+							<!-- ============================================================== -->
+							<li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+								<form class="app-search position-absolute">
+									<input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+								</form>
+							</li>
+						</ul>
+						<!-- ============================================================== -->
+						<!-- Right side toggle and nav items -->
+						<!-- ============================================================== -->
+						<ul class="navbar-nav float-right">
+							<!-- ============================================================== -->
+							<!-- User profile and search -->
+							<!-- ============================================================== -->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo base_url();?>vendors/assets/images/users/d3.jpg" alt="user" class="rounded-circle" width="50"></a>
+								<div class="dropdown-menu dropdown-menu-right user-dd animated" style="background-color: aliceblue;">
+									<form action="" method="POST">
+										<?php if(isset($user_name) && $user_name != null) { ?>
+											<a class="dropdown-item" href="#" style="text-align:center!important"><i class="mdi mdi-arrow-left-bold"></i><?php echo " Welcome back " . $user_name . " " ?><i class="mdi mdi-arrow-right-bold"></i></a>
+											<div class="dropdown-divider"></div>
+											<a class="dropdown-item" href="<?php echo base_url(); ?>modifyuser" style="text-align:center!important"><i class="mdi mdi-account-settings"></i> Update Profile</a>
+											<div class="dropdown-divider"></div>
+											<a class="dropdown-item" href="<?php echo base_url('index/signout'); ?>" style="text-align:center!important"><i class="mdi mdi-logout"></i> Sign Out</a>
+										<?php } else { ?>
+											<a class="dropdown-item" href="<?php echo base_url(); ?>authenticate" style="text-align:center!important"><i class="mdi mdi-login"></i> Sign In</a>
+										<?php } ?>
+									</form>
+								</div>
+							</li>
+							<!-- ============================================================== -->
+							<!-- User profile and search -->
+							<!-- ============================================================== -->
+						</ul>
+					</div>
+				</nav>
+			</header>
+			<!-- ============================================================== -->
+			<!-- End Topbar header -->
+			<!-- ============================================================== -->
+			<!-- ============================================================== -->
+			<!-- Left Sidebar - style you can find in sidebar.scss  -->
+			<!-- ============================================================== -->
+			<aside class="left-sidebar" data-sidebarbg="skin5">
+				<!-- Sidebar scroll-->
+				<div class="scroll-sidebar">
+					<!-- Sidebar navigation-->
+					<nav class="sidebar-nav">
+						<ul id="sidebarnav" class="p-t-30">
+							<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Home</span></a></li>
+							<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>history" aria-expanded="false"><i class="mdi mdi-history"></i><span class="hide-menu">History</span></a></li>
+							<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>translate" aria-expanded="false"><i class="mdi mdi-google-translate"></i><span class="hide-menu">Translate</span></a></li>
+							<li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Vocabulary</span></a>
+								<ul aria-expanded="false" class="collapse  first-level">
+									<li class="sidebar-item"><a href="<?php echo base_url(); ?>vocabulary/beginner" class="sidebar-link"><i class="mdi mdi-alphabetical"></i><span class="hide-menu">Beginner</span></a></li>
+									<li class="sidebar-item"><a href="<?php echo base_url(); ?>vocabulary/intermediate" class="sidebar-link"><i class="mdi mdi-amazon"></i><span class="hide-menu">Intermediate</span></a></li>
+									<li class="sidebar-item"><a href="<?php echo base_url(); ?>vocabulary/advanced" class="sidebar-link"><i class="mdi mdi-air-conditioner"></i><span class="hide-menu">Advanced</span></a></li>
+								</ul>
+							</li>
+							<li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-headphones"></i><span class="hide-menu">Listening</span></a>
+								<ul aria-expanded="false" class="collapse  first-level">
+									<li class="sidebar-item"><a href="<?php echo base_url(); ?>listening/beginner" class="sidebar-link"><i class="mdi mdi-alphabetical"></i><span class="hide-menu">Beginner</span></a></li>
+									<li class="sidebar-item"><a href="<?php echo base_url(); ?>listening/intermediate" class="sidebar-link"><i class="mdi mdi-amazon"></i><span class="hide-menu">Intermediate</span></a></li>
+									<li class="sidebar-item"><a href="<?php echo base_url(); ?>listening/advanced" class="sidebar-link"><i class="mdi mdi-air-conditioner"></i><span class="hide-menu">Advanced</span></a></li>
+								</ul>
+							</li>
+							<li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple"></i><span class="hide-menu">Grammar</span></a>
+								<ul aria-expanded="false" class="collapse  first-level">
+									<li class="sidebar-item"><a href="<?php echo base_url(); ?>grammar/beginner" class="sidebar-link"><i class="mdi mdi-alphabetical"></i><span class="hide-menu">Beginner</span></a></li>
+									<li class="sidebar-item"><a href="<?php echo base_url(); ?>grammar/intermediate" class="sidebar-link"><i class="mdi mdi-amazon"></i><span class="hide-menu">Intermediate</span></a></li>
+									<li class="sidebar-item"><a href="<?php echo base_url(); ?>grammar/advanced" class="sidebar-link"><i class="mdi mdi-air-conditioner"></i><span class="hide-menu">Advanced</span></a></li>
+								</ul>
+							</li>
+							<li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-timer"></i><span class="hide-menu">Test Exam</span></a>
+								<ul aria-expanded="false" class="collapse  first-level">
+									<li class="sidebar-item"><a href="<?php echo base_url(); ?>testexam/beginner" class="sidebar-link"><i class="mdi mdi-alphabetical"></i><span class="hide-menu">Beginner</span></a></li>
+									<li class="sidebar-item"><a href="<?php echo base_url(); ?>testexam/intermediate" class="sidebar-link"><i class="mdi mdi-amazon"></i><span class="hide-menu">Intermediate</span></a></li>
+									<li class="sidebar-item"><a href="<?php echo base_url(); ?>testexam/advanced" class="sidebar-link"><i class="mdi mdi-air-conditioner"></i><span class="hide-menu">Advanced</span></a></li>
+								</ul>
+							</li>
+							<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>surfingweb" aria-expanded="false"><i class="mdi mdi-web"></i><span class="hide-menu">Surfing Web</span></a></li>
+							<li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>questionandanswer" aria-expanded="false"><i class="mdi mdi-calendar-question"></i><span class="hide-menu">Q&A</span></a></li>
+						</ul>
+					</nav>
+					<!-- End Sidebar navigation -->
+				</div>
+				<!-- End Sidebar scroll-->
+			</aside>
+			<!-- ============================================================== -->
+			<!-- End Left Sidebar - style you can find in sidebar.scss  -->
+			<!-- ============================================================== -->
+			<!-- ============================================================== -->
+			<!-- Page wrapper  -->
+			<!-- ============================================================== -->
+			<div class="page-wrapper">
+				<!-- ============================================================== -->
+				<!-- Bread crumb and right sidebar toggle -->
+				<!-- ============================================================== -->
+				<div class="page-breadcrumb">
 					<div class="row">
-						<div class="col-xs-4">
-							<p>Welcome to English Conversation</p>
-						</div>
-						<form action="" method="POST">
-							<div class="col-xs-6 col-md-push-2 text-right">
-								<?php if(isset($user_name) && $user_name != null) { ?>
-									<ul>
-										<li class="has-dropdown">
-											<a href="#"><?php echo "Hello " . $user_name ?></a>
-											<ul class="dropdown">
-												<li><a href="<?php echo base_url('index/signout'); ?>">Sign out</a></li>
-												<li><a href="<?php echo base_url(); ?>modifyuser">Modify user</a></li>
-											</ul>
-										</li>
-									</ul>
-								<?php } else { ?>
-									<p class="btn-apply"><a href="<?php echo base_url(); ?>authenticate">Sign up/Sign in</a></p>
-								<?php } ?>
+						<div class="col-12 d-flex no-block align-items-center">
+							<h4 class="page-title">Home</h4>
+							<div class="ml-auto text-right">
+								<nav aria-label="breadcrumb">
+									<ol class="breadcrumb">
+										<!-- <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li> -->
+										<!-- <li class="breadcrumb-item active" aria-current="page">Library</li> -->
+									</ol>
+								</nav>
 							</div>
-						</form>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="top-menu">
-				<div class="container">
+				<!-- ============================================================== -->
+				<!-- End Bread crumb and right sidebar toggle -->
+				<!-- ============================================================== -->
+
+				<!-- ============================================================== -->
+				<!-- Container fluid  -->
+				<!-- ============================================================== -->
+				<div class="container-fluid">
+					<!-- ============================================================== -->
+					<!-- Recent comment and chats -->
+					<!-- ============================================================== -->
 					<div class="row">
-						<div class="col-md-2">
-							<div id="colorlib-logo"><a href="<?php echo base_url(); ?>">EnglishConversation</a></div>
+						<!-- column -->
+						<div class="col-lg-12">
+							<!-- card new -->
+							<div class="card">
+								<div class="card-body">
+									<h4 class="card-title m-b-0">Vocabulary</h4>
+								</div>
+								<ul class="list-style-none">
+									<li class="d-flex no-block card-body">
+										<i class="fa fa-check-circle w-30px m-t-5"></i>
+										<div>
+											<a href="#" class="m-b-0 font-medium p-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
+											<span class="text-muted">dolor sit amet, consectetur adipiscing</span>
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right">
+												<h5 class="text-muted m-b-0">20</h5>
+												<span class="text-muted font-16">Jan</span>
+											</div>
+										</div>
+									</li>
+									<li class="d-flex no-block card-body border-top">
+										<i class="fa fa-gift w-30px m-t-5"></i>
+										<div>
+											<a href="#" class="m-b-0 font-medium p-0">Congratulation Maruti, Happy Birthday</a>
+											<span class="text-muted">many many happy returns of the day</span>
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right">
+												<h5 class="text-muted m-b-0">11</h5>
+												<span class="text-muted font-16">Jan</span>
+											</div>
+										</div>
+									</li>
+									<li class="d-flex no-block card-body border-top">
+										<i class="fa fa-plus w-30px m-t-5"></i>
+										<div>
+											<a href="#" class="m-b-0 font-medium p-0">Maruti is a Responsive Admin theme</a>
+											<span class="text-muted">But already everything was solved. It will ...</span>
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right">
+												<h5 class="text-muted m-b-0">19</h5>
+												<span class="text-muted font-16">Jan</span>
+											</div>
+										</div>
+									</li>
+									<li class="d-flex no-block card-body border-top">
+										<i class="fa fa-leaf w-30px m-t-5"></i>
+										<div>
+											<a href="#" class="m-b-0 font-medium p-0">Envato approved Maruti Admin template</a>
+											<span class="text-muted">i am very happy to approved by TF</span>
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right">
+												<h5 class="text-muted m-b-0">20</h5>
+												<span class="text-muted font-16">Jan</span>
+											</div>
+										</div>
+									</li>
+									<li class="d-flex no-block card-body border-top">
+										<i class="fa fa-question-circle w-30px m-t-5"></i>
+										<div>
+											<a href="#" class="m-b-0 font-medium p-0"> I am alwayse here if you have any question</a>
+											<span class="text-muted">we glad that you choose our template</span>
+										</div>
+										<div class="ml-auto">
+											<div class="tetx-right">
+												<h5 class="text-muted m-b-0">15</h5>
+												<span class="text-muted font-16">Jan</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
 						</div>
-						<div class="col-md-10 text-right menu-1">
-							<ul>
-								<li><a href="<?php echo base_url(); ?>">Home</a></li>
-                                <li><a href="<?php echo base_url(); ?>history">History</a></li>
-                                <li><a href="<?php echo base_url(); ?>translate">Translate</a></li>
-								<li class="has-dropdown">
-									<a href="#">Vocabulary</a>
-									<ul class="dropdown">
-										<li><a href="vocabulary/beginner">Beginner</a></li>
-										<li><a href="vocabulary/high_beginner">High Beginner</a></li>
-										<li><a href="vocabulary/low_intermediae">Low Intermediae</a></li>
-										<li><a href="vocabulary/intermediae">Intermediate</a></li>
-										<li><a href="vocabulary/high_intermediae">High Intermediate</a></li>
-                                        <li><a href="vocabulary/low_advanced">Low Advanced</a></li>
-                                        <li><a href="vocabulary/advanced">Advanced</a></li>
-									</ul>
-								</li>
-                                <li class="has-dropdown">
-									<a href="#">Listening</a>
-									<ul class="dropdown">
-										<li><a href="listening/beginner">Beginner</a></li>
-										<li><a href="listening/high_beginner">High Beginner</a></li>
-										<li><a href="listening/low_intermediae">Low Intermediae</a></li>
-										<li><a href="listening/intermediae">Intermediate</a></li>
-										<li><a href="listening/high_intermediae">High Intermediate</a></li>
-                                        <li><a href="listening/low_advanced">Low Advanced</a></li>
-                                        <li><a href="listening/advanced">Advanced</a></li>
-									</ul>
-								</li>
-                                <li class="has-dropdown">
-									<a href="#">Grammar</a>
-									<ul class="dropdown">
-										<li><a href="grammar/beginner">Beginner</a></li>
-										<li><a href="grammar/high_beginner">High Beginner</a></li>
-										<li><a href="grammar/low_intermediae">Low Intermediae</a></li>
-										<li><a href="grammar/intermediae">Intermediate</a></li>
-										<li><a href="grammar/high_intermediae">High Intermediate</a></li>
-                                        <li><a href="grammar/low_advanced">Low Advanced</a></li>
-                                        <li><a href="grammar/advanced">Advanced</a></li>
-									</ul>
-								</li>
-                                <li class="has-dropdown">
-									<a href="#">Test Exam</a>
-									<ul class="dropdown">
-										<li><a href="test_exam/beginner">Beginner</a></li>
-										<li><a href="test_exam/high_beginner">High Beginner</a></li>
-										<li><a href="test_exam/low_intermediae">Low Intermediae</a></li>
-										<li><a href="test_exam/intermediae">Intermediate</a></li>
-										<li><a href="test_exam/high_intermediae">High Intermediate</a></li>
-                                        <li><a href="test_exam/low_advanced">Low Advanced</a></li>
-                                        <li><a href="test_exam/advanced">Advanced</a></li>
-									</ul>
-								</li>
-								<li><a href="surfingweb">Surfing Web</a></li>
-								<li class="active"><a href="questionandanswer">Q&A</a></li>
-							</ul>
-						</div>
+						<!-- column -->
 					</div>
+					<!-- ============================================================== -->
+					<!-- Recent comment and chats -->
+					<!-- ============================================================== -->
 				</div>
+
+				<!-- ============================================================== -->
+				<!-- footer -->
+				<!-- ============================================================== -->
+				<footer class="footer text-center">
+					All Rights Reserved by Hue Le. Designed and Developed by <a href="https://wrappixel.com">HueLe</a>
+				</footer>
+				<!-- ============================================================== -->
+				<!-- End footer -->
+				<!-- ============================================================== -->
 			</div>
-		</nav>
-		<aside id="colorlib-hero">
-			<div class="flexslider">
-				<ul class="slides">
-			   	    <li style="background-image: url('<?php echo base_url();?>vendors/images/classes-5.jpg');">
-			   		    <div class="container-fluid" style="margin-top: 140px">
-			   			    <div class="row">
-				   			    <div class="col-md-8 col-sm-12 col-md-offset-1 col-xs-12 col-md-pull-1">
-                                    
-				   			    </div>
-				   		    </div>
-			   		    </div>
-	                    <div class="gototop js-top">
-		                    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
-	                    </div>
-			   	    </li>
-			  	</ul>
-		  	</div>
-		</aside>
-    </div>
-	<!-- jQuery -->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendors/js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendors/js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendors/js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendors/js/jquery.waypoints.min.js"></script>
-	<!-- Stellar Parallax -->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendors/js/jquery.stellar.min.js"></script>
-	<!-- Flexslider -->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendors/js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendors/js/owl.carousel.min.js"></script>
-	<!-- Magnific Popup -->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendors/js/jquery.magnific-popup.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendors/js/magnific-popup-options.js"></script>
-	<!-- Counters -->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendors/js/jquery.countTo.js"></script>
-	<!-- Main -->
-	<script type="text/javascript" src="<?php echo base_url(); ?>vendors/js/main.js"></script>
+			<!-- ============================================================== -->
+			<!-- End Page wrapper  -->
+			<!-- ============================================================== -->
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Wrapper -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- All Jquery -->
+		<!-- ============================================================== -->
+		<script src="<?php echo base_url();?>vendors/assets/libs/jquery/dist/jquery.min.js"></script>
+		<!-- Bootstrap tether Core JavaScript -->
+		<script src="<?php echo base_url();?>vendors/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+		<script src="<?php echo base_url();?>vendors/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="<?php echo base_url();?>vendors/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+		<script src="<?php echo base_url();?>vendors/assets/extra-libs/sparkline/sparkline.js"></script>
+		<!--Wave Effects -->
+		<script src="<?php echo base_url();?>vendors/dist/js/waves.js"></script>
+		<!--Menu sidebar -->
+		<script src="<?php echo base_url();?>vendors/dist/js/sidebarmenu.js"></script>
+		<!--Custom JavaScript -->
+		<script src="<?php echo base_url();?>vendors/dist/js/custom.min.js"></script>
+		<!--This page JavaScript -->
+		<!-- <script src="<?php echo base_url();?>vendors/dist/js/pages/dashboards/dashboard1.js"></script> -->
+		<!-- Charts js Files -->
+		<script src="<?php echo base_url();?>vendors/assets/libs/flot/excanvas.js"></script>
+		<script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.js"></script>
+		<script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.pie.js"></script>
+		<script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.time.js"></script>
+		<script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.stack.js"></script>
+		<script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.crosshair.js"></script>
+		<script src="<?php echo base_url();?>vendors/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+		<script src="<?php echo base_url();?>vendors/dist/js/pages/chart/chart-page-init.js"></script>
 
 	</body>
+
 </html>
