@@ -178,12 +178,12 @@
              <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Home</h4>
+                        <h4 class="page-title">Surfing Web</h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <!-- <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li> -->
-                                    <!-- <li class="breadcrumb-item active" aria-current="page">Library</li> -->
+                                    <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Surfing Web</li>
                                 </ol>
                             </nav>
                         </div>
@@ -217,7 +217,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                All Rights Reserved by Hue Le. Designed and Developed by <a href="https://wrappixel.com">HueLe</a>
+                All Rights Reserved by Hue Le. Designed and Developed by <a href="https://www.facebook.com/annnhien696">HueLe</a>
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
