@@ -218,28 +218,18 @@
                             <div class="card">
                                 <ul class="list-style-none">
                                     <form class="contact100-form validate-form flex-sb flex-w">
-
-                                        <div class="container-contact100-form-btn-lang">
-                                            <button type="button" id="en_vi" class="contact100-form-btn-translate-activate">
-                                                English => Vietnamese
-                                            </button>
-                                            <button type="button" id="vi_en" class="contact100-form-btn-translate">
-                                                Vietnamese => English
-                                            </button>
-                                        </div>
-
                                         <div class="wrap-input100 validate-input">
-                                            <textarea class="input100" name="source" placeholder="Hello!"></textarea>
+                                            <textarea class="input100" name="source" id="source" placeholder="Hello!"></textarea>
                                             <span class="focus-input100"></span>
                                         </div>
 
                                         <div class="wrap-input100 validate-input">
-                                            <textarea class="input100" name="result" placeholder="Xin chào!"></textarea>
+                                            <textarea class="input100" name="target" id="target" placeholder="Xin chào!"></textarea>
                                             <span class="focus-input100"></span>
                                         </div>
 
                                         <div class="container-contact100-form-btn">
-                                            <button type="button" class="contact100-form-btn">
+                                            <button type="button" id="btnTranslate" class="contact100-form-btn">
                                                 Translate
                                             </button>
                                         </div>
@@ -299,12 +289,13 @@
         <script src="<?php echo base_url();?>vendors/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
         <script src="<?php echo base_url();?>vendors/dist/js/pages/chart/chart-page-init.js"></script>
 
-        <script>
-            $('.container-contact100-form-btn-lang button').on('click', function(){
-                $(this).siblings().removeClass('contact100-form-btn-translate-activate');
-                $(this).siblings().addClass('contact100-form-btn-translate');
-                $(this).addClass('contact100-form-btn-translate-activate');
-                $(this).removeClass('contact100-form-btn-translate');
+        <script type="text/javascript">
+            $("#btnTranslate").click(function () {
+                var url = "https://translation.googleapis.com/language/translate/v2?key=???????&source=EN&target=VI";
+                url += "&q=" + escape($("#source").val());
+                $.get(url, function (data, status) {
+                    $("#target").val(data.data.translations[0].translatedText);
+                });
             });
         </script>
     </body>
