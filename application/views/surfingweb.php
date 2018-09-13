@@ -204,7 +204,7 @@
                     <div class="row">
                         <!-- column -->
                         <div class="col-lg-12">
-                            <iframe width="100%" height="800px" frameborder="0" src="http://www.latimes.com/"></iframe>
+                            <iframe width="100%" height="9000px" frameborder="0" src="http://www.latimes.com/"></iframe>
                         </div>
                         <!-- column -->
                     </div>
@@ -245,9 +245,7 @@
         <script src="<?php echo base_url();?>vendors/dist/js/sidebarmenu.js"></script>
         <!--Custom JavaScript -->
         <script src="<?php echo base_url();?>vendors/dist/js/custom.min.js"></script>
-        <!--This page JavaScript -->
-        <!-- <script src="<?php echo base_url();?>vendors/dist/js/pages/dashboards/dashboard1.js"></script> -->
-        <!-- Charts js Files -->
+
         <script src="<?php echo base_url();?>vendors/assets/libs/flot/excanvas.js"></script>
         <script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.js"></script>
         <script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.pie.js"></script>
