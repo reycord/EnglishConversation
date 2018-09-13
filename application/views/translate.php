@@ -291,7 +291,7 @@
 
         <script type="text/javascript">
             $("#btnTranslate").click(function () {
-                var url = "https://translation.googleapis.com/language/translate/v2?key=???????&source=EN&target=VI";
+                var url = "https://translation.googleapis.com/language/translate/v2?key=AIzaSyAvTvHjQAevvqQ3eULNMls8ji4BF04S8uA&source=EN&target=VI";
                 url += "&q=" + escape($("#source").val());
                 $.get(url, function (data, status) {
                     $("#target").val(data.data.translations[0].translatedText);
