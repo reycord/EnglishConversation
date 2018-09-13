@@ -224,7 +224,7 @@
                                         </div>
 
                                         <div class="wrap-input100 validate-input">
-                                            <textarea class="input100" name="target" id="target" placeholder="Xin chào!"></textarea>
+                                            <textarea readonly class="input100" name="target" id="target" placeholder="Xin chào!"></textarea>
                                             <span class="focus-input100"></span>
                                         </div>
 
