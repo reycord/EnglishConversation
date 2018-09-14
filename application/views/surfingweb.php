@@ -204,7 +204,7 @@
                     <div class="row">
                         <!-- column -->
                         <div class="col-lg-12">
-                            <iframe width="100%" height="9000px" frameborder="0" src="http://www.latimes.com/"></iframe>
+                            <iframe width="100%" height="10000px" frameborder="0" src="http://www.latimes.com/"></iframe>
                         </div>
                         <!-- column -->
                     </div>
