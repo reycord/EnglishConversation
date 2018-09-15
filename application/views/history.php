@@ -83,14 +83,6 @@
 									</div>
 								</li>
 							<?php } ?>
-							<!-- ============================================================== -->
-							<!-- Search -->
-							<!-- ============================================================== -->
-							<li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
-								<form class="app-search position-absolute">
-									<input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
-								</form>
-							</li>
 						</ul>
 						<!-- ============================================================== -->
 						<!-- Right side toggle and nav items -->
@@ -268,7 +260,7 @@
 				<!-- footer -->
 				<!-- ============================================================== -->
 				<footer class="footer text-center">
-					All Rights Reserved by Hue Le. Designed and Developed by <a href="https://wrappixel.com">HueLe</a>
+					All Rights Reserved by Daemond. Designed and Developed by <a href="https://www.facebook.com/annnhien696">HueLe</a>
 				</footer>
 				<!-- ============================================================== -->
 				<!-- End footer -->
