@@ -162,12 +162,12 @@
 				<div class="page-breadcrumb">
 					<div class="row">
 						<div class="col-12 d-flex no-block align-items-center">
-							<h4 class="page-title">Question And Answer</h4>
+							<h4 class="page-title">History</h4>
 							<div class="ml-auto text-right">
 								<nav aria-label="breadcrumb">
 									<ol class="breadcrumb">
 										<li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
-										<li class="breadcrumb-item active" aria-current="page">List Question</li>
+										<li class="breadcrumb-item active" aria-current="page">List Vocabulary</li>
 									</ol>
 								</nav>
 							</div>
@@ -198,7 +198,6 @@
 										<i class="fa fa-check-circle w-30px m-t-5"></i>
 										<div>
 											<a href="#" class="m-b-0 font-medium p-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-											<span class="text-muted">dolor sit amet, consectetur adipiscing</span>
 										</div>
 										<div class="ml-auto">
 											<div class="tetx-right">
@@ -211,7 +210,6 @@
 										<i class="fa fa-gift w-30px m-t-5"></i>
 										<div>
 											<a href="#" class="m-b-0 font-medium p-0">Congratulation Maruti, Happy Birthday</a>
-											<span class="text-muted">many many happy returns of the day</span>
 										</div>
 										<div class="ml-auto">
 											<div class="tetx-right">
@@ -224,7 +222,6 @@
 										<i class="fa fa-plus w-30px m-t-5"></i>
 										<div>
 											<a href="#" class="m-b-0 font-medium p-0">Maruti is a Responsive Admin theme</a>
-											<span class="text-muted">But already everything was solved. It will ...</span>
 										</div>
 										<div class="ml-auto">
 											<div class="tetx-right">
@@ -237,7 +234,6 @@
 										<i class="fa fa-leaf w-30px m-t-5"></i>
 										<div>
 											<a href="#" class="m-b-0 font-medium p-0">Envato approved Maruti Admin template</a>
-											<span class="text-muted">i am very happy to approved by TF</span>
 										</div>
 										<div class="ml-auto">
 											<div class="tetx-right">
@@ -250,7 +246,6 @@
 										<i class="fa fa-question-circle w-30px m-t-5"></i>
 										<div>
 											<a href="#" class="m-b-0 font-medium p-0"> I am alwayse here if you have any question</a>
-											<span class="text-muted">we glad that you choose our template</span>
 										</div>
 										<div class="ml-auto">
 											<div class="tetx-right">

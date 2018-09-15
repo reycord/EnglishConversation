@@ -83,14 +83,6 @@
                                     </div>
                                 </li>
                             <?php } ?>
-                            <!-- ============================================================== -->
-                            <!-- Search -->
-                            <!-- ============================================================== -->
-                            <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
-                                <form class="app-search position-absolute">
-                                    <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
-                                </form>
-                            </li>
                         </ul>
                         <!-- ============================================================== -->
                         <!-- Right side toggle and nav items -->
@@ -134,7 +126,7 @@
                     <!-- Sidebar navigation-->
                     <nav class="sidebar-nav">
                         <ul id="sidebarnav" class="p-t-30">
-                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Home</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Home</span></a></li>
                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>history" aria-expanded="false"><i class="mdi mdi-history"></i><span class="hide-menu">History</span></a></li>
                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>translate" aria-expanded="false"><i class="mdi mdi-google-translate"></i><span class="hide-menu">Translate</span></a></li>
                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>vocabulary" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Vocabulary</span></a></li>
@@ -162,7 +154,15 @@
                 <div class="page-breadcrumb">
                     <div class="row">
                         <div class="col-12 d-flex no-block align-items-center">
-                            <h4 class="page-title">Home</h4>
+                            <h4 class="page-title">Grammar</h4>
+                            <div class="ml-auto text-right">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Grammar</li>
+                                    </ol>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -180,79 +180,49 @@
                     <div class="row">
                         <!-- column -->
                         <div class="col-lg-12">
-                            <!-- card new -->
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title m-b-0">List Vocabulary</h4>
+                            <!-- ##### Cool Facts Area Start ##### -->
+                            <section class="cool-facts-area section-padding-100-0">
+                                <div class="container">
+                                    <div class="row">
+                                        <!-- Single Cool Facts Area -->
+                                        <a href="<?php echo base_url(); ?>grammar/beginner" class="col-12 col-sm-6 col-lg-4">
+                                            <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
+                                                <div class="icon">
+                                                    <img src="<?php echo base_url();?>vendors/assets/images/earth.png" alt="">
+                                                </div>
+                                                <h3 style="color:#3762f0;"><span class="counter">1987</span></h3>
+                                                <h5 style="color:#404040;">Unit grammar</h5>
+                                                <h2>Beginner</h2>
+                                            </div>
+                                        </a>
+
+                                        <!-- Single Cool Facts Area -->
+                                        <a href="<?php echo base_url(); ?>grammar/intermediate" class="col-12 col-sm-6 col-lg-4">
+                                            <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
+                                                <div class="icon">
+                                                    <img src="<?php echo base_url();?>vendors/assets/images/events.png" alt="">
+                                                </div>
+                                                <h3 style="color:#3762f0;"><span class="counter">1912</span></h3>
+                                                <h5 style="color:#404040;">Unit grammar</h5>
+                                                <h2>Intermediate</h2>
+                                            </div>
+                                        </a>
+
+                                        <!-- Single Cool Facts Area -->
+                                        <a href="<?php echo base_url(); ?>grammar/advanced" class="col-12 col-sm-6 col-lg-4">
+                                            <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
+                                                <div class="icon">
+                                                    <img src="<?php echo base_url();?>vendors/assets/images/docs.png" alt="">
+                                                </div>
+                                                <h3 style="color:#3762f0;"><span class="counter">2023</span></h3>
+                                                <h5 style="color:#404040;">Unit grammar</h5>
+                                                <h2>Advanced</h2>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
-                                <ul class="list-style-none">
-                                    <li class="d-flex no-block card-body">
-                                        <i class="fa fa-check-circle w-30px m-t-5"></i>
-                                        <div>
-                                            <a href="#" class="m-b-0 font-medium p-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                                            <span class="text-muted">dolor sit amet, consectetur adipiscing</span>
-                                        </div>
-                                        <div class="ml-auto">
-                                            <div class="tetx-right">
-                                                <h5 class="text-muted m-b-0">20</h5>
-                                                <span class="text-muted font-16">Jan</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex no-block card-body border-top">
-                                        <i class="fa fa-gift w-30px m-t-5"></i>
-                                        <div>
-                                            <a href="#" class="m-b-0 font-medium p-0">Congratulation Maruti, Happy Birthday</a>
-                                            <span class="text-muted">many many happy returns of the day</span>
-                                        </div>
-                                        <div class="ml-auto">
-                                            <div class="tetx-right">
-                                                <h5 class="text-muted m-b-0">11</h5>
-                                                <span class="text-muted font-16">Jan</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex no-block card-body border-top">
-                                        <i class="fa fa-plus w-30px m-t-5"></i>
-                                        <div>
-                                            <a href="#" class="m-b-0 font-medium p-0">Maruti is a Responsive Admin theme</a>
-                                            <span class="text-muted">But already everything was solved. It will ...</span>
-                                        </div>
-                                        <div class="ml-auto">
-                                            <div class="tetx-right">
-                                                <h5 class="text-muted m-b-0">19</h5>
-                                                <span class="text-muted font-16">Jan</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex no-block card-body border-top">
-                                        <i class="fa fa-leaf w-30px m-t-5"></i>
-                                        <div>
-                                            <a href="#" class="m-b-0 font-medium p-0">Envato approved Maruti Admin template</a>
-                                            <span class="text-muted">i am very happy to approved by TF</span>
-                                        </div>
-                                        <div class="ml-auto">
-                                            <div class="tetx-right">
-                                                <h5 class="text-muted m-b-0">20</h5>
-                                                <span class="text-muted font-16">Jan</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex no-block card-body border-top">
-                                        <i class="fa fa-question-circle w-30px m-t-5"></i>
-                                        <div>
-                                            <a href="#" class="m-b-0 font-medium p-0"> I am alwayse here if you have any question</a>
-                                            <span class="text-muted">we glad that you choose our template</span>
-                                        </div>
-                                        <div class="ml-auto">
-                                            <div class="tetx-right">
-                                                <h5 class="text-muted m-b-0">15</h5>
-                                                <span class="text-muted font-16">Jan</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                            </section>
+                            <!-- ##### Cool Facts Area End ##### -->
                         </div>
                         <!-- column -->
                     </div>
@@ -265,7 +235,7 @@
                 <!-- footer -->
                 <!-- ============================================================== -->
                 <footer class="footer text-center">
-                    All Rights Reserved by Hue Le. Designed and Developed by <a href="https://wrappixel.com">HueLe</a>
+                    All Rights Reserved by Hue Le. Designed and Developed by <a href="https://www.facebook.com/annnhien696">HueLe</a>
                 </footer>
                 <!-- ============================================================== -->
                 <!-- End footer -->
@@ -293,9 +263,7 @@
         <script src="<?php echo base_url();?>vendors/dist/js/sidebarmenu.js"></script>
         <!--Custom JavaScript -->
         <script src="<?php echo base_url();?>vendors/dist/js/custom.min.js"></script>
-        <!--This page JavaScript -->
-        <!-- <script src="<?php echo base_url();?>vendors/dist/js/pages/dashboards/dashboard1.js"></script> -->
-        <!-- Charts js Files -->
+
         <script src="<?php echo base_url();?>vendors/assets/libs/flot/excanvas.js"></script>
         <script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.js"></script>
         <script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.pie.js"></script>
