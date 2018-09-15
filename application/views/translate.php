@@ -128,37 +128,13 @@
                     <!-- Sidebar navigation-->
                     <nav class="sidebar-nav">
                         <ul id="sidebarnav" class="p-t-30">
-                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Home</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Home</span></a></li>
                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>history" aria-expanded="false"><i class="mdi mdi-history"></i><span class="hide-menu">History</span></a></li>
                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>translate" aria-expanded="false"><i class="mdi mdi-google-translate"></i><span class="hide-menu">Translate</span></a></li>
-                            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Vocabulary</span></a>
-                                <ul aria-expanded="false" class="collapse  first-level">
-                                    <li class="sidebar-item"><a href="<?php echo base_url(); ?>vocabulary/beginner" class="sidebar-link"><i class="mdi mdi-alphabetical"></i><span class="hide-menu">Beginner</span></a></li>
-                                    <li class="sidebar-item"><a href="<?php echo base_url(); ?>vocabulary/intermediate" class="sidebar-link"><i class="mdi mdi-amazon"></i><span class="hide-menu">Intermediate</span></a></li>
-                                    <li class="sidebar-item"><a href="<?php echo base_url(); ?>vocabulary/advanced" class="sidebar-link"><i class="mdi mdi-air-conditioner"></i><span class="hide-menu">Advanced</span></a></li>
-                                </ul>
-                            </li>
-                            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-headphones"></i><span class="hide-menu">Listening</span></a>
-                                <ul aria-expanded="false" class="collapse  first-level">
-                                    <li class="sidebar-item"><a href="<?php echo base_url(); ?>listening/beginner" class="sidebar-link"><i class="mdi mdi-alphabetical"></i><span class="hide-menu">Beginner</span></a></li>
-                                    <li class="sidebar-item"><a href="<?php echo base_url(); ?>listening/intermediate" class="sidebar-link"><i class="mdi mdi-amazon"></i><span class="hide-menu">Intermediate</span></a></li>
-                                    <li class="sidebar-item"><a href="<?php echo base_url(); ?>listening/advanced" class="sidebar-link"><i class="mdi mdi-air-conditioner"></i><span class="hide-menu">Advanced</span></a></li>
-                                </ul>
-                            </li>
-                            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple"></i><span class="hide-menu">Grammar</span></a>
-                                <ul aria-expanded="false" class="collapse  first-level">
-                                    <li class="sidebar-item"><a href="<?php echo base_url(); ?>grammar/beginner" class="sidebar-link"><i class="mdi mdi-alphabetical"></i><span class="hide-menu">Beginner</span></a></li>
-                                    <li class="sidebar-item"><a href="<?php echo base_url(); ?>grammar/intermediate" class="sidebar-link"><i class="mdi mdi-amazon"></i><span class="hide-menu">Intermediate</span></a></li>
-                                    <li class="sidebar-item"><a href="<?php echo base_url(); ?>grammar/advanced" class="sidebar-link"><i class="mdi mdi-air-conditioner"></i><span class="hide-menu">Advanced</span></a></li>
-                                </ul>
-                            </li>
-                            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-timer"></i><span class="hide-menu">Test Exam</span></a>
-                                <ul aria-expanded="false" class="collapse  first-level">
-                                    <li class="sidebar-item"><a href="<?php echo base_url(); ?>testexam/beginner" class="sidebar-link"><i class="mdi mdi-alphabetical"></i><span class="hide-menu">Beginner</span></a></li>
-                                    <li class="sidebar-item"><a href="<?php echo base_url(); ?>testexam/intermediate" class="sidebar-link"><i class="mdi mdi-amazon"></i><span class="hide-menu">Intermediate</span></a></li>
-                                    <li class="sidebar-item"><a href="<?php echo base_url(); ?>testexam/advanced" class="sidebar-link"><i class="mdi mdi-air-conditioner"></i><span class="hide-menu">Advanced</span></a></li>
-                                </ul>
-                            </li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>vocabulary" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Vocabulary</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>listening" aria-expanded="false"><i class="mdi mdi-headphones"></i><span class="hide-menu">Listening</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>grammar" aria-expanded="false"><i class="mdi mdi-book-multiple"></i><span class="hide-menu">Grammar</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>testexam" aria-expanded="false"><i class="mdi mdi-timer"></i><span class="hide-menu">Test Exam</span></a></li>
                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>surfingweb" aria-expanded="false"><i class="mdi mdi-web"></i><span class="hide-menu">Surfing Web</span></a></li>
                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo base_url(); ?>questionandanswer" aria-expanded="false"><i class="mdi mdi-calendar-question"></i><span class="hide-menu">Q&A</span></a></li>
                         </ul>
