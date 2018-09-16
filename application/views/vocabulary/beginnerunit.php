@@ -156,14 +156,26 @@
                 <div class="page-breadcrumb">
                     <div class="row">
                         <div class="col-12 d-flex no-block align-items-center">
-                            <h4 class="page-title">Beginner Unit</h4>
+                            <h4 class="page-title">
+                                <?php 
+                                    $url = $_SERVER['REQUEST_URI'];
+                                    $splitURL = explode('=', $url)[1];
+                                    echo "Beginner Unit " . $splitURL;
+                                ?>
+                            </h4>
                             <div class="ml-auto text-right">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
                                         <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>vocabulary">Vocabulary</a></li>
                                         <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>vocabulary/beginner">Beginner</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Beginner Unit</li>
+                                        <li class="breadcrumb-item active" aria-current="page">
+                                            <?php 
+                                                $url = $_SERVER['REQUEST_URI'];
+                                                $splitURL = explode('=', $url)[1];
+                                                echo "Beginner Unit " . $splitURL;
+                                            ?>
+                                        </li>
                                     </ol>
                                 </nav>
                             </div>
