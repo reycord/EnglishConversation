@@ -15,6 +15,8 @@
         <link href="<?php echo base_url();?>vendors/assets/libs/flot/css/float-chart.css" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="<?php echo base_url();?>vendors/dist/css/style.min.css" rel="stylesheet">
+
+        <link href="<?php echo base_url();?>vendors/dist/css/style_translate.css" rel="stylesheet">
     </head>
 
     <body>
@@ -154,13 +156,26 @@
                 <div class="page-breadcrumb">
                     <div class="row">
                         <div class="col-12 d-flex no-block align-items-center">
-                            <h4 class="page-title">List Unit Vocabulary</h4>
+                            <h4 class="page-title">
+                                <?php 
+                                    $url = $_SERVER['REQUEST_URI'];
+                                    $splitURL = explode('=', $url)[1];
+                                    echo "Intermediate Unit " . $splitURL;
+                                ?>
+                            </h4>
                             <div class="ml-auto text-right">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
                                         <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>vocabulary">Vocabulary</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">List Unit Vocabulary</li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>vocabulary/intermediate">Intermediate</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">
+                                            <?php 
+                                                $url = $_SERVER['REQUEST_URI'];
+                                                $splitURL = explode('=', $url)[1];
+                                                echo "Intermediate Unit " . $splitURL;
+                                            ?>
+                                        </li>
                                     </ol>
                                 </nav>
                             </div>
@@ -185,18 +200,26 @@
                             <section class="cool-facts-area section-padding-100-0">
                                 <div class="container">
                                     <div class="row">
-                                        <?php foreach ($dataunit as $value) { 
-                                            if ($value['level_id'] == '1') {
-                                        ?>
-                                            <a href="<?php echo base_url(); ?>vocabulary/beginnerunit?unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                                <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                    <div class="icon">
-                                                        <img src="<?php echo base_url() . $value['unit_image']; ?>" alt="">
+                                        <?php foreach ($datavocabulary as $value) { 
+                                            $url = $_SERVER['REQUEST_URI'];
+                                            $splitURL = explode('=', $url)[1];
+                                            if ($value['unit_id'] == $splitURL && $value['level_id'] == '2') 
+                                        { ?>
+                                            <div class="col-12 col-sm-6 col-lg-4">
+                                                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                                    <div class="flippable">
+                                                        <div class="front">
+                                                            <span>
+                                                                <?php echo $value['vocabulary_name']; ?>
+                                                            </span>
+                                                        </div>
+                                                        <div class="back">
+                                                            <?php echo $value['vocabulary_mean']; ?>
+                                                        </div>
                                                     </div>
-                                                    <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
                                                 </div>
-                                            </a>
-                                        <?php } 
+                                            </div>
+                                        <?php }
                                         } ?>
                                     </div>
                                 </div>
@@ -252,6 +275,11 @@
         <script src="<?php echo base_url();?>vendors/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
         <script src="<?php echo base_url();?>vendors/dist/js/pages/chart/chart-page-init.js"></script>
 
+        <script type="text/javascript">
+            $(".flippable").click(function(){
+                $(this).toggleClass("flipme");
+            });
+        </script>
     </body>
 
 </html>

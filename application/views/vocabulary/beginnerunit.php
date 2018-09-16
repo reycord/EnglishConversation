@@ -200,150 +200,28 @@
                             <section class="cool-facts-area section-padding-100-0">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-12 col-sm-6 col-lg-4">
-                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                                                <div class="flippable">
-                                                    <div class="front">
-                                                        <span>A</span>
-                                                    </div>
-                                                    <div class="back">
-                                                        Một
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-lg-4">  
-                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                                                <div class="flippable">
-                                                    <div class="front">
-                                                        <span>An</span>
-                                                    </div>
-                                                    <div class="back">
-                                                        Một
+                                        <?php foreach ($datavocabulary as $value) { 
+                                            $url = $_SERVER['REQUEST_URI'];
+                                            $splitURL = explode('=', $url)[1];
+                                            if ($value['unit_id'] == $splitURL && $value['level_id'] == '1') 
+                                        { ?>
+                                            <div class="col-12 col-sm-6 col-lg-4">
+                                                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                                    <div class="flippable">
+                                                        <div class="front">
+                                                            <span>
+                                                                <?php echo $value['vocabulary_name']; ?>
+                                                            </span>
+                                                        </div>
+                                                        <div class="back">
+                                                            <?php echo $value['vocabulary_mean']; ?>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-lg-4"> 
-                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                                                <div class="flippable">
-                                                    <div class="front">
-                                                        <span>About</span>
-                                                    </div>
-                                                    <div class="back">
-                                                        Về
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-lg-4">   
-                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                                                <div class="flippable">
-                                                    <div class="front">
-                                                        <span>Above</span>
-                                                    </div>
-                                                    <div class="back">
-                                                        Ở trên
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-lg-4">       
-                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                                                <div class="flippable">
-                                                    <div class="front">
-                                                        <span>Across</span>
-                                                    </div>
-                                                    <div class="back">
-                                                        Ngang qua
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-lg-4">       
-                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                                                <div class="flippable">
-                                                    <div class="front">
-                                                        <span>Act</span>
-                                                    </div>
-                                                    <div class="back">
-                                                        Hành động, cư xử
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-lg-4">       
-                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                                                <div class="flippable">
-                                                    <div class="front">
-                                                        <span>Active</span>
-                                                    </div>
-                                                    <div class="back">
-                                                        Năng động, chủ động
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-lg-4">       
-                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                                                <div class="flippable">
-                                                    <div class="front">
-                                                        <span>Activity</span>
-                                                    </div>
-                                                    <div class="back">
-                                                        Hoạt động
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-lg-4">       
-                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                                                <div class="flippable">
-                                                    <div class="front">
-                                                        <span>Add</span>
-                                                    </div>
-                                                    <div class="back">
-                                                        Thêm vào, cộng
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-lg-4">       
-                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                                                <div class="flippable">
-                                                    <div class="front">
-                                                        <span>Afraid</span>
-                                                    </div>
-                                                    <div class="back">
-                                                        Sợ, e rằng
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-lg-4">       
-                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                                                <div class="flippable">
-                                                    <div class="front">
-                                                        <span>After</span>
-                                                    </div>
-                                                    <div class="back">
-                                                        Sau
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-sm-6 col-lg-4">       
-                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                                                <div class="flippable">
-                                                    <div class="front">
-                                                        <span>Again</span>
-                                                    </div>
-                                                    <div class="back">
-                                                        Lại, một lần nữa
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
+                                        <?php }
+                                        } ?>
                                     </div>
                                 </div>
                             </section>
