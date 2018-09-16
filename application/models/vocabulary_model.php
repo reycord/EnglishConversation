@@ -12,6 +12,7 @@ class vocabulary_model extends My_Model
     {
         $this->db->select('unit_id');
         $this->db->select('unit_name');
+        $this->db->select('unit_image');
         $this->db->from('tbl_unit');
         $query = $this->db->get();
         $result = $query->result_array();
