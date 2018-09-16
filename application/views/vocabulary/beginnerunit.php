@@ -15,6 +15,8 @@
         <link href="<?php echo base_url();?>vendors/assets/libs/flot/css/float-chart.css" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="<?php echo base_url();?>vendors/dist/css/style.min.css" rel="stylesheet">
+
+        <link href="<?php echo base_url();?>vendors/dist/css/style_translate.css" rel="stylesheet">
     </head>
 
     <body>
@@ -186,99 +188,150 @@
                             <section class="cool-facts-area section-padding-100-0">
                                 <div class="container">
                                     <div class="row">
-                                        <!-- Single Cool Facts Area -->
-                                        <?php foreach ($dataunit as $value) {
-                                            if ($value['unit_id'] == '1'){ ?>
-                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                        <div class="icon">
-                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_1.png" alt="">
-                                                        </div>
-                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                        <div class="col-12 col-sm-6 col-lg-4">
+                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="flippable">
+                                                    <div class="front">
+                                                        <span>A</span>
                                                     </div>
-                                                </a>
-                                            <?php }
-                                            if ($value['unit_id'] == '2'){ ?>
-                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                        <div class="icon">
-                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_2.png" alt="">
-                                                        </div>
-                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                    <div class="back">
+                                                        Một
                                                     </div>
-                                                </a>
-                                            <?php }
-                                            if ($value['unit_id'] == '3'){ ?>
-                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                        <div class="icon">
-                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_3.png" alt="">
-                                                        </div>
-                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-4">  
+                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="flippable">
+                                                    <div class="front">
+                                                        <span>An</span>
                                                     </div>
-                                                </a>
-                                            <?php }
-                                            if ($value['unit_id'] == '4'){ ?>
-                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                        <div class="icon">
-                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_4.png" alt="">
-                                                        </div>
-                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                    <div class="back">
+                                                        Một
                                                     </div>
-                                                </a>
-                                            <?php }
-                                            if ($value['unit_id'] == '5'){ ?>
-                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                        <div class="icon">
-                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_5.png" alt="">
-                                                        </div>
-                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-4"> 
+                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="flippable">
+                                                    <div class="front">
+                                                        <span>About</span>
                                                     </div>
-                                                </a>
-                                            <?php }
-                                            if ($value['unit_id'] == '6'){ ?>
-                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                        <div class="icon">
-                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_6.png" alt="">
-                                                        </div>
-                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                    <div class="back">
+                                                        Về
                                                     </div>
-                                                </a>
-                                            <?php }
-                                            if ($value['unit_id'] == '7'){ ?>
-                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                        <div class="icon">
-                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_7.png" alt="">
-                                                        </div>
-                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-4">   
+                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="flippable">
+                                                    <div class="front">
+                                                        <span>Above</span>
                                                     </div>
-                                                </a>
-                                            <?php }
-                                            if ($value['unit_id'] == '8'){ ?>
-                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                        <div class="icon">
-                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_8.png" alt="">
-                                                        </div>
-                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                    <div class="back">
+                                                        Ở trên
                                                     </div>
-                                                </a>
-                                            <?php }
-                                            if ($value['unit_id'] == '9'){ ?>
-                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                        <div class="icon">
-                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_9.png" alt="">
-                                                        </div>
-                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-4">       
+                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="flippable">
+                                                    <div class="front">
+                                                        <span>Across</span>
                                                     </div>
-                                                </a>
-                                            <?php }
-                                        } ?>
+                                                    <div class="back">
+                                                        Ngang qua
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-4">       
+                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="flippable">
+                                                    <div class="front">
+                                                        <span>Act</span>
+                                                    </div>
+                                                    <div class="back">
+                                                        Hành động, cư xử
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-4">       
+                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="flippable">
+                                                    <div class="front">
+                                                        <span>Active</span>
+                                                    </div>
+                                                    <div class="back">
+                                                        Năng động, chủ động
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-4">       
+                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="flippable">
+                                                    <div class="front">
+                                                        <span>Activity</span>
+                                                    </div>
+                                                    <div class="back">
+                                                        Hoạt động
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-4">       
+                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="flippable">
+                                                    <div class="front">
+                                                        <span>Add</span>
+                                                    </div>
+                                                    <div class="back">
+                                                        Thêm vào, cộng
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-4">       
+                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="flippable">
+                                                    <div class="front">
+                                                        <span>Afraid</span>
+                                                    </div>
+                                                    <div class="back">
+                                                        Sợ, e rằng
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-4">       
+                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="flippable">
+                                                    <div class="front">
+                                                        <span>After</span>
+                                                    </div>
+                                                    <div class="back">
+                                                        Sau
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-lg-4">       
+                                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="flippable">
+                                                    <div class="front">
+                                                        <span>Again</span>
+                                                    </div>
+                                                    <div class="back">
+                                                        Lại, một lần nữa
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </section>
@@ -333,6 +386,11 @@
         <script src="<?php echo base_url();?>vendors/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
         <script src="<?php echo base_url();?>vendors/dist/js/pages/chart/chart-page-init.js"></script>
 
+        <script type="text/javascript">
+            $(".flippable").click(function(){
+                $(this).toggleClass("flipme");
+            });
+        </script>
     </body>
 
 </html>
