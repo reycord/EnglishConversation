@@ -185,7 +185,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <!-- Single Cool Facts Area -->
-                                        <a href="<?php echo base_url(); ?>grammar/beginner" class="col-12 col-sm-6 col-lg-4">
+                                        <a href="<?php echo base_url(); ?>grammar/beginner" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
                                             <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
                                                 <div class="icon">
                                                     <img src="<?php echo base_url();?>vendors/assets/images/earth.png" alt="">
@@ -197,7 +197,7 @@
                                         </a>
 
                                         <!-- Single Cool Facts Area -->
-                                        <a href="<?php echo base_url(); ?>grammar/intermediate" class="col-12 col-sm-6 col-lg-4">
+                                        <a href="<?php echo base_url(); ?>grammar/intermediate" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
                                             <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
                                                 <div class="icon">
                                                     <img src="<?php echo base_url();?>vendors/assets/images/events.png" alt="">
@@ -209,7 +209,7 @@
                                         </a>
 
                                         <!-- Single Cool Facts Area -->
-                                        <a href="<?php echo base_url(); ?>grammar/advanced" class="col-12 col-sm-6 col-lg-4">
+                                        <a href="<?php echo base_url(); ?>grammar/advanced" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
                                             <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
                                                 <div class="icon">
                                                     <img src="<?php echo base_url();?>vendors/assets/images/docs.png" alt="">

@@ -154,12 +154,14 @@
                 <div class="page-breadcrumb">
                     <div class="row">
                         <div class="col-12 d-flex no-block align-items-center">
-                            <h4 class="page-title">Listening</h4>
+                            <h4 class="page-title">Beginner Unit</h4>
                             <div class="ml-auto text-right">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Listening</li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>vocabulary">Vocabulary</a></li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>vocabulary/beginner">Beginner</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Beginner Unit</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -185,40 +187,98 @@
                                 <div class="container">
                                     <div class="row">
                                         <!-- Single Cool Facts Area -->
-                                        <a href="<?php echo base_url(); ?>listening/beginner" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                            <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                <div class="icon">
-                                                    <img src="<?php echo base_url();?>vendors/assets/images/star.png" alt="">
-                                                </div>
-                                                <h3 style="color:#3762f0;"><span class="counter">2023</span></h3>
-                                                <h5 style="color:#404040;">Unit hearing</h5>
-                                                <h2>Beginner</h2>
-                                            </div>
-                                        </a>
-
-                                        <!-- Single Cool Facts Area -->
-                                        <a href="<?php echo base_url(); ?>listening/intermediate" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                            <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                <div class="icon">
-                                                    <img src="<?php echo base_url();?>vendors/assets/images/earth.png" alt="">
-                                                </div>
-                                                <h3 style="color:#3762f0;"><span class="counter">1987</span></h3>
-                                                <h5 style="color:#404040;">Unit hearing</h5>
-                                                <h2>Intermediate</h2>
-                                            </div>
-                                        </a>
-
-                                        <!-- Single Cool Facts Area -->
-                                        <a href="<?php echo base_url(); ?>listening/advanced" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                            <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                <div class="icon">
-                                                    <img src="<?php echo base_url();?>vendors/assets/images/events.png" alt="">
-                                                </div>
-                                                <h3 style="color:#3762f0;"><span class="counter">1912</span></h3>
-                                                <h5 style="color:#404040;">Unit hearing</h5>
-                                                <h2>Advanced</h2>
-                                            </div>
-                                        </a>
+                                        <?php foreach ($dataunit as $value) {
+                                            if ($value['unit_id'] == '1'){ ?>
+                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
+                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
+                                                        <div class="icon">
+                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_1.png" alt="">
+                                                        </div>
+                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                    </div>
+                                                </a>
+                                            <?php }
+                                            if ($value['unit_id'] == '2'){ ?>
+                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
+                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
+                                                        <div class="icon">
+                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_2.png" alt="">
+                                                        </div>
+                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                    </div>
+                                                </a>
+                                            <?php }
+                                            if ($value['unit_id'] == '3'){ ?>
+                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
+                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
+                                                        <div class="icon">
+                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_3.png" alt="">
+                                                        </div>
+                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                    </div>
+                                                </a>
+                                            <?php }
+                                            if ($value['unit_id'] == '4'){ ?>
+                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
+                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
+                                                        <div class="icon">
+                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_4.png" alt="">
+                                                        </div>
+                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                    </div>
+                                                </a>
+                                            <?php }
+                                            if ($value['unit_id'] == '5'){ ?>
+                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
+                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
+                                                        <div class="icon">
+                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_5.png" alt="">
+                                                        </div>
+                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                    </div>
+                                                </a>
+                                            <?php }
+                                            if ($value['unit_id'] == '6'){ ?>
+                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
+                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
+                                                        <div class="icon">
+                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_6.png" alt="">
+                                                        </div>
+                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                    </div>
+                                                </a>
+                                            <?php }
+                                            if ($value['unit_id'] == '7'){ ?>
+                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
+                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
+                                                        <div class="icon">
+                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_7.png" alt="">
+                                                        </div>
+                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                    </div>
+                                                </a>
+                                            <?php }
+                                            if ($value['unit_id'] == '8'){ ?>
+                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
+                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
+                                                        <div class="icon">
+                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_8.png" alt="">
+                                                        </div>
+                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                    </div>
+                                                </a>
+                                            <?php }
+                                            if ($value['unit_id'] == '9'){ ?>
+                                                <a href="<?php echo base_url(); ?>vocabulary/beginner/unit&unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
+                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
+                                                        <div class="icon">
+                                                            <img src="<?php echo base_url();?>vendors/assets/images/number_9.png" alt="">
+                                                        </div>
+                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                    </div>
+                                                </a>
+                                            <?php }
+                                        } ?>
                                     </div>
                                 </div>
                             </section>
