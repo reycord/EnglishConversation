@@ -330,12 +330,54 @@ class Migration_Init extends CI_Migration{
         -- Table: TBL_LISTENING
         CREATE TABLE TBL_LISTENING (
             LISTENING_ID serial  NOT NULL,
-            LEVEL_ID int  NOT NULL,
-            LISTENING_NAME varchar(50) NULL,
+            LEVEL_ID int NULL,
+            LISTENING_NAME text NULL,
             LINK_MEDIA text NULL,
+            UNIT_ID int NULL,
             DEL_FG char(1) NULL,
             CONSTRAINT TBL_LISTENING_pk PRIMARY KEY (LISTENING_ID)
         );
+
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (1, 1, 'abc', 'vendors/assets/media/beginner/1.mp3', 1, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (2, 1, 'abc', 'vendors/assets/media/beginner/2.mp3', 2, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (3, 1, 'abc', 'vendors/assets/media/beginner/3.mp3', 3, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (4, 1, 'abc', 'vendors/assets/media/beginner/4.mp3', 4, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (5, 1, 'abc', 'vendors/assets/media/beginner/5.mp3', 5, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (6, 1, 'abc', 'vendors/assets/media/beginner/6.mp3', 6, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (7, 1, 'abc', 'vendors/assets/media/beginner/7.mp3', 7, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (8, 1, 'abc', 'vendors/assets/media/beginner/8.mp3', 8, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (9, 1, 'abc', 'vendors/assets/media/beginner/9.mp3', 9, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (10, 1, 'abc', 'vendors/assets/media/beginner/10.mp3', 10, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (11, 1, 'abc', 'vendors/assets/media/beginner/11.mp3', 11, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (12, 1, 'abc', 'vendors/assets/media/beginner/12.mp3', 12, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (13, 1, 'abc', 'vendors/assets/media/beginner/13.mp3', 13, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (14, 1, 'abc', 'vendors/assets/media/beginner/14.mp3', 14, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (15, 1, 'abc', 'vendors/assets/media/beginner/15.mp3', 15, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (16, 1, 'abc', 'vendors/assets/media/beginner/16.mp3', 16, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (17, 1, 'abc', 'vendors/assets/media/beginner/17.mp3', 17, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (18, 1, 'abc', 'vendors/assets/media/beginner/18.mp3', 18, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (19, 1, 'abc', 'vendors/assets/media/beginner/19.mp3', 19, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (20, 1, 'abc', 'vendors/assets/media/beginner/20.mp3', 20, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (21, 1, 'abc', 'vendors/assets/media/beginner/21.mp3', 21, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (22, 1, 'abc', 'vendors/assets/media/beginner/22.mp3', 22, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (23, 1, 'abc', 'vendors/assets/media/beginner/23.mp3', 23, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (24, 1, 'abc', 'vendors/assets/media/beginner/24.mp3', 24, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (25, 1, 'abc', 'vendors/assets/media/beginner/25.mp3', 25, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (26, 1, 'abc', 'vendors/assets/media/beginner/26.mp3', 26, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (27, 1, 'abc', 'vendors/assets/media/beginner/27.mp3', 27, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (28, 1, 'abc', 'vendors/assets/media/beginner/28.mp3', 28, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (29, 1, 'abc', 'vendors/assets/media/beginner/29.mp3', 29, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (30, 1, 'abc', 'vendors/assets/media/beginner/30.mp3', 30, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (31, 1, 'abc', 'vendors/assets/media/beginner/31.mp3', 31, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (32, 1, 'abc', 'vendors/assets/media/beginner/32.mp3', 32, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (33, 1, 'abc', 'vendors/assets/media/beginner/33.mp3', 33, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (34, 1, 'abc', 'vendors/assets/media/beginner/34.mp3', 34, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (35, 1, 'abc', 'vendors/assets/media/beginner/35.mp3', 35, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (36, 1, 'abc', 'vendors/assets/media/beginner/36.mp3', 36, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (37, 1, 'abc', 'vendors/assets/media/beginner/37.mp3', 37, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (38, 1, 'abc', 'vendors/assets/media/beginner/38.mp3', 38, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (39, 1, 'abc', 'vendors/assets/media/beginner/39.mp3', 39, '1');
+        INSERT INTO TBL_LISTENING(LISTENING_ID, LEVEL_ID, LISTENING_NAME, LINK_MEDIA, UNIT_ID, DEL_FG) VALUES (40, 1, 'abc', 'vendors/assets/media/beginner/40.mp3', 40, '1');
 
         -- Table: TBL_MARK
         CREATE TABLE TBL_MARK (
@@ -473,6 +515,14 @@ class Migration_Init extends CI_Migration{
         ALTER TABLE TBL_LISTENING ADD CONSTRAINT TBL_LISTENING_M_LEVEL
             FOREIGN KEY (LEVEL_ID)
             REFERENCES M_LEVEL (LEVEL_ID)  
+            NOT DEFERRABLE 
+            INITIALLY IMMEDIATE
+        ;
+
+        -- Reference: TBL_LISTENING_TBL_UNIT (table: TBL_LISTENING)
+        ALTER TABLE TBL_LISTENING ADD CONSTRAINT TBL_LISTENING_TBL_UNIT
+            FOREIGN KEY (UNIT_ID)
+            REFERENCES TBL_UNIT (UNIT_ID)  
             NOT DEFERRABLE 
             INITIALLY IMMEDIATE
         ;
