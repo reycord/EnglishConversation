@@ -437,7 +437,7 @@ class Migration_Init extends CI_Migration{
 
         -- Table: TBL_WORD_DICTIONARY
         CREATE TABLE TBL_WORD_DICTIONARY (
-            WORD_ID serial  NOT NULL,
+            WORD_ID int  NOT NULL,
             WORD_NAME varchar(20) NULL,
             WORD_DETAILS text NULL,
             DEL_FG char(1) NULL,
@@ -446,9 +446,9 @@ class Migration_Init extends CI_Migration{
 
         -- Table: TBL_WORD_HISTORY_USER
         CREATE TABLE TBL_WORD_HISTORY_USER (
-            WORD_HISTORY_USER_ID serial  NOT NULL,
-            USER_ID serial  NOT NULL,
-            WORD_ID serial  NOT NULL,
+            WORD_HISTORY_USER_ID int  NOT NULL,
+            USER_ID int  NOT NULL,
+            WORD_ID int  NOT NULL,
             WORD_NAME varchar(20) NULL,
             DEL_FG char(1) NULL,
             CONSTRAINT TBL_WORD_HISTORY_USER_pk PRIMARY KEY (WORD_HISTORY_USER_ID)
