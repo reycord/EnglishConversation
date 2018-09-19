@@ -154,13 +154,13 @@
                 <div class="page-breadcrumb">
                     <div class="row">
                         <div class="col-12 d-flex no-block align-items-center">
-                            <h4 class="page-title">List Unit Vocabulary</h4>
+                            <h4 class="page-title">List Unit Listening</h4>
                             <div class="ml-auto text-right">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>vocabulary">Vocabulary</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">List Unit Vocabulary</li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>listening">Listening</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">List Unit Listening</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -188,10 +188,10 @@
                                         <?php foreach ($dataunit as $value) { 
                                             if ($value['level_id'] == '2') {
                                         ?>
-                                            <a href="<?php echo base_url(); ?>vocabulary/intermediateunit?unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
+                                            <a href="<?php echo base_url(); ?>listening/intermediateunit?unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
                                                 <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
                                                     <div class="icon">
-                                                        <img src="<?php echo base_url() . $value['unit_image']; ?>" alt="">
+                                                        <img src="<?php echo base_url(); ?>/vendors/assets/images/i_music.png" alt="">
                                                     </div>
                                                     <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
                                                 </div>

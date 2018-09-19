@@ -16,7 +16,9 @@
         <!-- Custom CSS -->
         <link href="<?php echo base_url();?>vendors/dist/css/style.min.css" rel="stylesheet">
 
-        <link href="<?php echo base_url();?>vendors/dist/css/style_translate.css" rel="stylesheet">
+        <link href="<?php echo base_url();?>vendors/dist/css/main_translate.css" rel="stylesheet">
+        
+        <link href="<?php echo base_url();?>vendors/dist/css/style_listening.css" rel="stylesheet">
     </head>
 
     <body>
@@ -167,8 +169,8 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>vocabulary">Vocabulary</a></li>
-                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>vocabulary/beginner">Beginner</a></li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>listening">Listening</a></li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>listening/beginner">Beginner</a></li>
                                         <li class="breadcrumb-item active" aria-current="page">
                                             <?php 
                                                 $url = $_SERVER['REQUEST_URI'];
@@ -196,36 +198,34 @@
                     <div class="row">
                         <!-- column -->
                         <div class="col-lg-12">
-                            <!-- ##### Cool Facts Area Start ##### -->
-                            <section class="cool-facts-area section-padding-100-0">
-                                <div class="container">
-                                    <div class="row">
-                                        <?php foreach ($datavocabulary as $value) { 
+                            <div class="card">
+                                <ul class="list-style-none">
+                                    <form class="contact100-form validate-form flex-sb flex-w">
+                                        <?php foreach ($datalistening as $value) { 
                                             $url = $_SERVER['REQUEST_URI'];
                                             $splitURL = explode('=', $url)[1];
                                             if ($value['unit_id'] == $splitURL && $value['level_id'] == '1') 
                                         { ?>
-                                            <div class="col-12 col-sm-6 col-lg-4">
-                                                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                                                    <div class="flippable">
-                                                        <div class="front">
-                                                            <span>
-                                                                <?php echo $value['vocabulary_name']; ?>
-                                                            </span>
-                                                        </div>
-                                                        <div class="back">
-                                                            <?php echo $value['vocabulary_mean']; ?>
-                                                        </div>
+                                            <div class="twelve columns offset-by-two add-bottom">
+                                                <div id="mainwrap">
+                                                    <div id="audiowrap">
+                                                        <audio controls autoplay controlsList="nodownload"><source src="<?php echo base_url() . $value['link_media']; ?>" type="audio/mpeg"></audio>
                                                     </div>
                                                 </div>
                                             </div>
-                                        
+                                            <div class="container-contact100-form-btn">
+                                                <button type="button" onclick="showDiv()" class="contact100-form-btn">
+                                                    Show
+                                                </button>
+                                            </div>
+                                            <div class="wrap-input100 validate-input" id="listening_name" style="display:none;">
+                                                <?php echo $value['listening_name']; ?>
+                                            </div>
                                         <?php }
                                         } ?>
-                                    </div>
-                                </div>
-                            </section>
-                            <!-- ##### Cool Facts Area End ##### -->
+                                    </form>
+                                </ul>
+                            </div>
                         </div>
                         <!-- column -->
                     </div>
@@ -277,9 +277,9 @@
         <script src="<?php echo base_url();?>vendors/dist/js/pages/chart/chart-page-init.js"></script>
 
         <script type="text/javascript">
-            $(".flippable").click(function(){
-                $(this).toggleClass("flipme");
-            });
+            function showDiv() {
+                document.getElementById('listening_name').style.display = "block";
+            }
         </script>
     </body>
 

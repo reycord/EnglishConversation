@@ -19,7 +19,7 @@ class Vocabulary extends My_Controller {
         }
 
         //Get data level
-        $datalevel = $this->level_model->getLevelName();
+        $datalevel = $this->level_model->getLevelNameVocabulary();
 
         $data['datalevel'] = $datalevel;
         //Load view vocabulary
