@@ -184,41 +184,18 @@
                             <section class="cool-facts-area section-padding-100-0">
                                 <div class="container">
                                     <div class="row">
-                                        <!-- Single Cool Facts Area -->
-                                        <a href="<?php echo base_url(); ?>grammar/beginner" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                            <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                <div class="icon">
-                                                    <img src="<?php echo base_url();?>vendors/assets/images/earth.png" alt="">
+                                        <?php foreach ($datalevel as $value) { ?>
+                                            <a href="<?php echo base_url() . 'grammar/' . strtolower($value['level_name']); ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
+                                                <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
+                                                    <div class="icon">
+                                                        <img src="<?php echo base_url() . $value['level_image']; ?>" alt="">
+                                                    </div>
+                                                    <h3 style="color:#3762f0;"><span class="counter"><?php echo $value['total']; ?></span></h3>
+                                                    <h5 style="color:#404040;">Unit Hearing</h5>
+                                                    <h2><?php echo $value['level_name']; ?></h2>
                                                 </div>
-                                                <h3 style="color:#3762f0;"><span class="counter">1987</span></h3>
-                                                <h5 style="color:#404040;">Unit grammar</h5>
-                                                <h2>Beginner</h2>
-                                            </div>
-                                        </a>
-
-                                        <!-- Single Cool Facts Area -->
-                                        <a href="<?php echo base_url(); ?>grammar/intermediate" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                            <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                <div class="icon">
-                                                    <img src="<?php echo base_url();?>vendors/assets/images/events.png" alt="">
-                                                </div>
-                                                <h3 style="color:#3762f0;"><span class="counter">1912</span></h3>
-                                                <h5 style="color:#404040;">Unit grammar</h5>
-                                                <h2>Intermediate</h2>
-                                            </div>
-                                        </a>
-
-                                        <!-- Single Cool Facts Area -->
-                                        <a href="<?php echo base_url(); ?>grammar/advanced" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                            <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                <div class="icon">
-                                                    <img src="<?php echo base_url();?>vendors/assets/images/docs.png" alt="">
-                                                </div>
-                                                <h3 style="color:#3762f0;"><span class="counter">2023</span></h3>
-                                                <h5 style="color:#404040;">Unit grammar</h5>
-                                                <h2>Advanced</h2>
-                                            </div>
-                                        </a>
+                                            </a>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </section>

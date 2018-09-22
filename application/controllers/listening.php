@@ -22,7 +22,7 @@ class Listening extends My_Controller {
         $datalevel = $this->level_model->getLevelNameListening();
 
         $data['datalevel'] = $datalevel;
-        //Load view vocabulary
+        //Load view listening
         $this->load->view('listening', $data);
     }
 
@@ -124,7 +124,7 @@ class Listening extends My_Controller {
         $datalistening = $this->listening_model->getListeningAdvanced();
 
         $data['datalistening'] = $datalistening;
-        //Load view datalistening advanced
+        //Load view listening advanced
         $this->load->view('listening/advancedunit', $data);
     }
 }
