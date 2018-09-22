@@ -18,7 +18,7 @@
 
         <link href="<?php echo base_url();?>vendors/dist/css/main_translate.css" rel="stylesheet">
         
-        <link href="<?php echo base_url();?>vendors/dist/css/style_listening.css" rel="stylesheet">
+        <link href="<?php echo base_url();?>vendors/dist/css/style_grammar.css" rel="stylesheet">
     </head>
 
     <body>
@@ -206,9 +206,8 @@
                                             $splitURL = explode('=', $url)[1];
                                             if ($value['unit_id'] == $splitURL && $value['level_id'] == '3') 
                                         { ?>
-                                            <div class="wrap-input100 validate-input">
+                                                <?php echo $value['grammar_name']; ?>
                                                 <?php echo $value['grammar_details']; ?>
-                                            </div>
                                         <?php }
                                         } ?>
                                     </form>
