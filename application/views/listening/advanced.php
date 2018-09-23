@@ -183,18 +183,29 @@
                             <section class="cool-facts-area section-padding-100-0">
                                 <div class="container">
                                     <div class="row">
-                                        <?php foreach ($dataunit as $value) { 
+                                        <?php $i = 1; foreach ($dataunit as $value) { 
                                             if ($value['level_id'] == '3') {
                                         ?>
-                                            <a href="<?php echo base_url(); ?>listening/advancedunit?unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-                                                <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-                                                    <div class="icon">
-                                                        <img src="<?php echo base_url(); ?>/vendors/assets/images/i_music.png" alt="">
+                                            <?php if($i <= 3) { ?>
+                                                <a href="<?php echo base_url(); ?>listening/advancedunit?unitId=<?php echo $value['unit_id']; ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
+                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
+                                                        <div class="icon">
+                                                            <img src="<?php echo base_url(); ?>/vendors/assets/images/i_music.png" alt="">
+                                                        </div>
+                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
                                                     </div>
-                                                    <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
-                                                </div>
-                                            </a>
-                                        <?php } 
+                                                </a>
+                                            <?php }else{ ?>
+                                                <a class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
+                                                    <div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
+                                                        <div class="icon">
+                                                            <img src="<?php echo base_url(); ?>/vendors/assets/images/i_locked.png" alt="">
+                                                        </div>
+                                                        <h4 style="margin-top: 10px;"><?php echo $value['unit_name']; ?></h4>
+                                                    </div>
+                                                </a>
+                                            <?php } ?>
+                                        <?php $i = $i + 1; } 
                                         } ?>
                                     </div>
                                 </div>
