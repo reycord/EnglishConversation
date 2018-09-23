@@ -13,7 +13,6 @@ class vocabulary_model extends My_Model
         $this->db->select('tbl_learn_vocabulary.level_id as level_id');
         $this->db->select('tbl_unit.unit_id as unit_id');
         $this->db->select('tbl_unit.unit_name as unit_name');
-        $this->db->select('tbl_unit.unit_image as unit_image');
         $this->db->from('tbl_unit');
         $this->db->join('tbl_learn_vocabulary', "tbl_unit.unit_id = tbl_learn_vocabulary.unit_id and tbl_learn_vocabulary.level_id = '1'", 'right');
         $this->db->group_by('tbl_learn_vocabulary.level_id');
@@ -34,7 +33,6 @@ class vocabulary_model extends My_Model
         $this->db->select('tbl_learn_vocabulary.level_id as level_id');
         $this->db->select('tbl_unit.unit_id as unit_id');
         $this->db->select('tbl_unit.unit_name as unit_name');
-        $this->db->select('tbl_unit.unit_image as unit_image');
         $this->db->from('tbl_unit');
         $this->db->join('tbl_learn_vocabulary', "tbl_unit.unit_id = tbl_learn_vocabulary.unit_id and tbl_learn_vocabulary.level_id = '2'", 'right');
         $this->db->group_by('tbl_learn_vocabulary.level_id');
@@ -55,7 +53,6 @@ class vocabulary_model extends My_Model
         $this->db->select('tbl_learn_vocabulary.level_id as level_id');
         $this->db->select('tbl_unit.unit_id as unit_id');
         $this->db->select('tbl_unit.unit_name as unit_name');
-        $this->db->select('tbl_unit.unit_image as unit_image');
         $this->db->from('tbl_unit');
         $this->db->join('tbl_learn_vocabulary', "tbl_unit.unit_id = tbl_learn_vocabulary.unit_id and tbl_learn_vocabulary.level_id = '3'", 'right');
         $this->db->group_by('tbl_learn_vocabulary.level_id');
