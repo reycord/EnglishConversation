@@ -27,14 +27,23 @@ class Registration extends My_Controller {
 
             if ($this->form_validation->run() === TRUE){
                 $email = $this->input->post('email');
-                $userName = $this->input->post('username');
-                $password = $this->input->post('password');
                 $result = $this->compareInfo($email);
                 if ($result) {
+                    $user_id = $this->registration_model->getMaxUserId();
                     $data = array(
+                        'user_id' => $user_id + 1,
                         'user_name' => $_POST['username'],
                         'email' => $_POST['email'],
                         'password' => md5($_POST['password']),
+                        'score_vocabulary_beginner' => 0,
+                        'score_vocabulary_intermediate' => 0,
+                        'score_vocabulary_advanced' => 0,
+                        'score_listening_beginner' => 0,
+                        'score_listening_intermediate' => 0,
+                        'score_listening_advanced' => 0,
+                        'score_grammar_beginner' => 0,
+                        'score_grammar_intermediate' => 0,
+                        'score_grammar_advanced' => 0,
                         'admin_flag' => '0',
                         'del_fg' => '0'
                     );
