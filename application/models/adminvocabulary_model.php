@@ -7,7 +7,7 @@ class adminvocabulary_model extends My_Model
         $this->load->database();
     }
 
-    //get max user_id from tbl_learn_vocabulary
+    //get max learn_vocabulary_id from tbl_learn_vocabulary
     public function getMaxLearnVocabularyId()
     {
         $this->db->select('max(learn_vocabulary_id) learn_vocabulary_id');
