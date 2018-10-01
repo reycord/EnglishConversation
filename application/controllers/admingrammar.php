@@ -29,18 +29,18 @@ class AdminGrammar extends My_Controller {
             $this->form_validation->set_rules('grammar_name', 'Grammar Name', 'trim|required');
             $this->form_validation->set_rules('grammar_details', 'Grammar Details', 'trim|required');
             $this->form_validation->set_error_delimiters('<p style="color:#d42a38">', '</p>');
-
-            if ($_POST['level'] = '1'){
+            
+            $grammar_id = $this->admingrammar_model->getNextGrammarId();
+                
+            if ($_POST['level'] === '1'){
                 $unit_id = $this->unit_model->getNextUnitBeginnerGrammar();
-            }elseif($_POST['level'] = '2'){
+            }elseif($_POST['level'] === '2'){
                 $unit_id = $this->unit_model->getNextUnitIntermediateGrammar();
             }else{
                 $unit_id = $this->unit_model->getNextUnitAdvancedGrammar();
             }
-            if ($this->form_validation->run() === TRUE){
-                
-                $grammar_id = $this->admingrammar_model->getNextGrammarId();
-
+            
+            if ($this->form_validation->run() == TRUE){
                 $data = array(
                     'grammar_id' => $grammar_id,
                     'level_id' => $_POST['level'],

@@ -53,9 +53,9 @@ class AdminVocabulary extends My_Controller {
             $this->form_validation->set_error_delimiters('<p style="color:#d42a38">', '</p>');
 
             if ($this->form_validation->run() === TRUE){
-                if ($_POST['level'] = '1'){
+                if ($_POST['level'] === '1'){
                     $unit_id = $this->unit_model->getNextUnitBeginnerVocabulary();
-                }elseif($_POST['level'] = '2'){
+                }elseif($_POST['level'] === '2'){
                     $unit_id = $this->unit_model->getNextUnitIntermediateVocabulary();
                 }else{
                     $unit_id = $this->unit_model->getNextUnitAdvancedVocabulary();

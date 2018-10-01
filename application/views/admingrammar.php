@@ -34,14 +34,14 @@
 				<div class="login100-more" style="background-image: url('<?php echo base_url();?>vendors/assets/images/classes-2.jpg');"></div>
 
 				<div class="wrap-login100 p-l-50 p-r-50 p-t-10 p-b-10">
-					<form class="login100-form validate-form" action="<?php echo base_url('admingrammar/checkGrammar/')?>" method="POST" >
+					<form class="login100-form validate-form" action="<?php echo base_url('admingrammar/checkGrammar/')?>" method="POST">
 						<span class="login100-form-title p-b-30">
 							Admin Grammar
                         </span>
 						<div class="wrap-select100">
 							<span class="label-input100">Level</span>
-							<select name="level" class="form-control" value="">
-                                <option value="1" selected>Beginner</option>
+							<select name="level" id="level" class="form-control">
+                                <option value="1">Beginner</option>
                                 <option value="2">Intermediate</option>
                                 <option value="3">Advanced</option>
                             </select>
