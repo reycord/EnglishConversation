@@ -72,6 +72,7 @@ class listening_model extends My_Model
     {
         $this->db->select('tbl_listening.level_id as level_id');
         $this->db->select('tbl_listening.listening_name as listening_name');
+        $this->db->select('tbl_listening.listening_details as listening_details');
         $this->db->select('tbl_listening.link_media as link_media');
         $this->db->select('tbl_listening.unit_id as unit_id');
         $this->db->from('tbl_listening');
@@ -92,6 +93,7 @@ class listening_model extends My_Model
     {
         $this->db->select('tbl_listening.level_id as level_id');
         $this->db->select('tbl_listening.listening_name as listening_name');
+        $this->db->select('tbl_listening.listening_details as listening_details');
         $this->db->select('tbl_listening.link_media as link_media');
         $this->db->select('tbl_listening.unit_id as unit_id');
         $this->db->from('tbl_listening');
@@ -112,6 +114,7 @@ class listening_model extends My_Model
     {
         $this->db->select('tbl_listening.level_id as level_id');
         $this->db->select('tbl_listening.listening_name as listening_name');
+        $this->db->select('tbl_listening.listening_details as listening_details');
         $this->db->select('tbl_listening.link_media as link_media');
         $this->db->select('tbl_listening.unit_id as unit_id');
         $this->db->from('tbl_listening');

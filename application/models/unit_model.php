@@ -96,4 +96,49 @@ class unit_model extends My_Model
         }
         return null;
     }
+
+    // get next unit_id beginner from tbl_listening
+    public function getNextUnitBeginnerListening(){
+        $this->db->select('max(tbl_listening.unit_id) + 1 as unit_id');
+        $this->db->from('tbl_listening');
+        $this->db->join('m_level', 'tbl_listening.level_id = m_level.level_id', 'left');
+        $this->db->where('m_level.level_id = 1');
+        $this->db->where("tbl_listening.del_fg = '0'");
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if (sizeof($result) > 0) {
+            return $result[0]['unit_id'];
+        }
+        return null;
+    }
+
+    // get next unit_id intermediate from tbl_listening
+    public function getNextUnitIntermediateListening(){
+        $this->db->select('max(tbl_listening.unit_id) + 1 as unit_id');
+        $this->db->from('tbl_listening');
+        $this->db->join('m_level', 'tbl_listening.level_id = m_level.level_id', 'left');
+        $this->db->where('m_level.level_id = 2');
+        $this->db->where("tbl_listening.del_fg = '0'");
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if (sizeof($result) > 0) {
+            return $result[0]['unit_id'];
+        }
+        return null;
+    }
+
+    // get next unit_id advanced from tbl_listening
+    public function getNextUnitAdvancedListening(){
+        $this->db->select('max(tbl_listening.unit_id) + 1 as unit_id');
+        $this->db->from('tbl_listening');
+        $this->db->join('m_level', 'tbl_listening.level_id = m_level.level_id', 'left');
+        $this->db->where('m_level.level_id = 3');
+        $this->db->where("tbl_listening.del_fg = '0'");
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if (sizeof($result) > 0) {
+            return $result[0]['unit_id'];
+        }
+        return null;
+    }
 }

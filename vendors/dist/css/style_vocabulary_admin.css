@@ -259,6 +259,12 @@ iframe {
   margin-bottom: 45px;
 }
 
+.wrap-input100-100 {
+  width: 100%;
+  position: relative;
+  margin-bottom: 45px;
+}
+
 .wrap-select100 {
   width: 100%;
   position: relative;

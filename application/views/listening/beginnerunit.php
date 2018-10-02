@@ -218,7 +218,7 @@
                                                 </button>
                                             </div>
                                             <div class="wrap-input100 validate-input" id="listening_name" style="display:none;">
-                                                <?php echo $value['listening_name']; ?>
+                                                <?php echo $value['listening_name'] . $value['listening_details']; ?>
                                             </div>
                                         <?php }
                                         } ?>
