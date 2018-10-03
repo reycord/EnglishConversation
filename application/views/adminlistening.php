@@ -34,6 +34,7 @@
 				<div class="login100-more" style="background-image: url('<?php echo base_url();?>vendors/assets/images/classes-2.jpg');"></div>
 
 				<div class="wrap-login100 p-l-50 p-r-50 p-t-10 p-b-10">
+                    <!-- <?php echo form_open_multipart(base_url('adminlistening/checkListening/'), array('class' => 'login100-form validate-form', 'method' => 'POST'));?> -->
 					<form class="login100-form validate-form" action="<?php echo base_url('adminlistening/checkListening/')?>" method="POST">
 						<span class="login100-form-title p-b-30">
 							Admin Listening
@@ -50,8 +51,8 @@
                         <?php echo form_error('mp3_file'); ?>
                         <div class="wrap-input100-100">
                             <span class="label-input100">Link File Mp3</span>
-                            <input type="file" name="mp3_file" class="file" value="<?=set_value('mp3_file')?>" accept=".mp3" style="visibility:hidden;position:absolute;">
-                            <input type="text" class="form-control" name="mp3_file" disabled value="<?=set_value('mp3_file')?>" accept=".mp3" placeholder="Upload mp3 File" style="width:85%!important;display:initial!important;height:80%!important;">
+                            <input type="file" name="mp3_file" class="file" accept=".mp3" style="visibility:hidden;position:absolute;">
+                            <input type="text" class="form-control" name="mp3_file" disabled accept=".mp3" placeholder="Upload mp3 File" style="width:85%!important;display:initial!important;height:80%!important;">
                             <button class="browse btn btn-primary input-lg" type="button" style="height:80%!important;"><i class="glyphicon glyphicon-search"></i> Browse</button>
                             <span class="focus-input100"></span>
                         </div>
