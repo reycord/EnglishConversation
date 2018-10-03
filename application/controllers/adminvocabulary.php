@@ -18,41 +18,21 @@ class AdminVocabulary extends My_Controller {
             $data['email'] = $getdata['email'];
             $data['admin_flag'] = $getdata['admin_flag'];
         }
-
         $this->load->view('adminvocabulary', $data);
     }
 
     public function checkVocabulary(){
         $data = null;
         if (isset($_POST['submit'])){
-            //Check validate field data
-            $this->form_validation->set_rules('vocabulary_name_1', 'Vocabulary Name 1', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_mean_1', 'Vocabulary Mean 1', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_name_2', 'Vocabulary Name 2', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_mean_2', 'Vocabulary Mean 2', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_name_3', 'Vocabulary Name 3', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_mean_3', 'Vocabulary Mean 3', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_name_4', 'Vocabulary Name 4', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_mean_4', 'Vocabulary Mean 4', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_name_5', 'Vocabulary Name 5', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_mean_5', 'Vocabulary Mean 5', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_name_6', 'Vocabulary Name 6', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_mean_6', 'Vocabulary Mean 6', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_name_7', 'Vocabulary Name 7', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_mean_7', 'Vocabulary Mean 7', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_name_8', 'Vocabulary Name 8', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_mean_8', 'Vocabulary Mean 8', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_name_9', 'Vocabulary Name 9', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_mean_9', 'Vocabulary Mean 9', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_name_10', 'Vocabulary Name 10', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_mean_10', 'Vocabulary Mean 10', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_name_11', 'Vocabulary Name 11', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_mean_11', 'Vocabulary Mean 11', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_name_12', 'Vocabulary Name 12', 'trim|required');
-            $this->form_validation->set_rules('vocabulary_mean_12', 'Vocabulary Mean 12', 'trim|required');
+            for ($a = 1; $a <= 12; $a++){
+                if( (($_POST['vocabulary_name_'.$a] == "") && ($_POST['vocabulary_mean_'.$a] == "")) == FALSE){
+                    //Check validate field data
+                    $this->form_validation->set_rules('vocabulary_name_'.$a, 'Vocabulary Name '.$a, 'trim|required');
+                    $this->form_validation->set_rules('vocabulary_mean_'.$a, 'Vocabulary Mean '.$a, 'trim|required');
+                }
+            }
             $this->form_validation->set_error_delimiters('<p style="color:#d42a38">', '</p>');
-
-            if ($this->form_validation->run() === TRUE){
+            if ($this->form_validation->run()){
                 if ($_POST['level'] === '1'){
                     $unit_id = $this->unit_model->getNextUnitBeginnerVocabulary();
                 }elseif($_POST['level'] === '2'){
@@ -72,15 +52,13 @@ class AdminVocabulary extends My_Controller {
                         'screen_id' => $i,
                         'del_fg' => '0'
                     );
-                    
+                    if( (($_POST['vocabulary_name_'.$i] == "") && ($_POST['vocabulary_mean_'.$i] == "")) == FALSE){
                     //Add data into table TBL_LEARN_VOCABULAR
-                    $this->db->insert('tbl_learn_vocabulary', $data);
+                    $this->db->insert('tbl_learn_vocabulary', $data);}
                 }
-
                 //Redirect to Admin Vocabulary Page
-                redirect('adminvocabulary', 'refresh');
-            }
-            else{
+                redirect('adminvocabulary', 'refresh');         
+        }else{
                 $this->load->view('adminvocabulary', $data);
             }
         }
