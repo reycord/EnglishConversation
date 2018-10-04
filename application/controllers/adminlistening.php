@@ -28,15 +28,31 @@ class AdminListening extends My_Controller {
         $data = null;
         if (isset($_POST['submit'])){
             //Check validate field data
-            $this->form_validation->set_rules('mp3_file', 'File MP3', 'required');
+            // $this->form_validation->set_rules('mp3_file', 'File MP3', 'required');
             $this->form_validation->set_rules('listening_name', 'Listening Name', 'trim|required');
             $this->form_validation->set_rules('listening_details', 'Listening Details', 'trim|required');
             $this->form_validation->set_error_delimiters('<p style="color:#d42a38">', '</p>');
-            $file = $_POST['mp3_file'];
-            echo $file;
+            $file = $_FILES['mp3_file']['name'];
             if ($this->form_validation->run() === TRUE){
-                $check_upload = $this->add_audio($_POST['level']);
-                if ($check_upload === NULL){
+                if ($_POST['level'] === '1'){
+                    $config['upload_path'] = './vendors/assets/media/beginner/';
+                }elseif($_POST['level'] === '2'){
+                    $config['upload_path'] = './vendors/assets/media/intermediate/';
+                }else{
+                    $config['upload_path'] = './vendors/assets/media/advanced/';
+                }
+                $config['allowed_types'] = '*';
+                $config['overwrite'] = TRUE;
+                $config['max_size'] = '8192';
+        
+                $this->upload->initialize($config);
+        
+                if (!$this->upload->do_upload('mp3_file')){
+                    $data['error'] = $this->upload->display_errors();
+                    $data['err_message'] =  $data['error'];
+                    $this->load->view('adminlistening', $data);
+                }else{
+                    $data = array('upload_data' => $this->upload->data());
                     if ($_POST['level'] === '1'){
                         $unit_id = $this->unit_model->getNextUnitBeginnerListening();
                         $mp3_file = 'vendors/assets/media/beginner/' . $file;
@@ -65,50 +81,11 @@ class AdminListening extends My_Controller {
     
                     //Redirect to Admin Listening Page
                     redirect('adminlistening', 'refresh');
-                }else{
-                    $data['err_message'] = trim($check_upload);
-                    $this->load->view('adminlistening', $data);
                 }
             }
             else{
                 $this->load->view('adminlistening', $data);
             }
         }
-    }
-
-    public function add_audio($level){
-        if ($level = '1'){
-            $config['upload_path'] = base_url() . 'vendors/assets/media/beginner/';
-        }elseif($level = '2'){
-            $config['upload_path'] = base_url() . 'vendors/assets/media/intermediate/';
-        }else{
-            $config['upload_path'] = base_url() . 'vendors/assets/media/advanced/';
-        }
-        
-        $config['allowed_types'] = 'mp3';
-        $config['overwrite'] = TRUE;
-        $config['max_size'] = '100000';
-
-        $this->load->library('upload', $config);
-        // if ($level = '1'){
-        //     chmod('vendors/assets/media/beginner/', 0777);
-        // }elseif($level = '2'){
-        //     chmod('vendors/assets/media/intermediate/', 0777);
-        // }else{
-        //     hmod('vendors/assets/media/advanced/', 0777);
-        // }
-
-        if (!$this->upload->do_upload('mp3_file'))
-        {
-            $data['error'] = $this->upload->display_errors();   
-            //line of codes that displays if there are errors
-            return $data['error'];
-        }
-        else
-        {
-            $data = array('upload_data' => $this->upload->data('mp3_file'));
-            return NULL;
-        }
-        
     }
 }

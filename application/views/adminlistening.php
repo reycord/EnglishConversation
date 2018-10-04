@@ -34,8 +34,7 @@
 				<div class="login100-more" style="background-image: url('<?php echo base_url();?>vendors/assets/images/classes-2.jpg');"></div>
 
 				<div class="wrap-login100 p-l-50 p-r-50 p-t-10 p-b-10">
-                    <!-- <?php echo form_open_multipart(base_url('adminlistening/checkListening/'), array('class' => 'login100-form validate-form', 'method' => 'POST'));?> -->
-					<form class="login100-form validate-form" action="<?php echo base_url('adminlistening/checkListening/')?>" method="POST">
+                    <form class="login100-form validate-form" action="<?php echo base_url('adminlistening/checkListening/')?>" method="POST" enctype="multipart/form-data">
 						<span class="login100-form-title p-b-30">
 							Admin Listening
                         </span>
@@ -142,7 +141,8 @@
                 file.trigger("click");
             });
             $(document).on("change", ".file", function() {
-                $(this).parent().find(".form-control").val($(this).val().replace(/C:\\fakepath\\/i, ""));
+                // $(this).parent().find(".form-control").val($(this).val().replace(/C:\\fakepath\\/i, ""));
+                $(this).parent().find(".form-control").val($(this).val());
             });
         </script>
 	</body>
