@@ -15,6 +15,7 @@
         <link href="<?php echo base_url();?>vendors/assets/libs/flot/css/float-chart.css" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="<?php echo base_url();?>vendors/dist/css/style.min.css" rel="stylesheet">
+		<link href="<?php echo base_url();?>vendors/dist/css/main_translate.css" rel="stylesheet">
     </head>
 
     <body>
@@ -153,12 +154,14 @@
                 <div class="page-breadcrumb">
                     <div class="row">
                         <div class="col-12 d-flex no-block align-items-center">
-                            <h4 class="page-title">Admin Vocabulary</h4>
+                            <h4 class="page-title">Create Vocabulary Beginner</h4>
                             <div class="ml-auto text-right">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Admin Vocabulary</li>
+										<li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminvocabulary">Admin Vocabulary</a></li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminvocabulary/beginner">Beginner</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Creare Vocabulary Beginner</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -177,32 +180,132 @@
                     <!-- Recent comment and chats -->
                     <!-- ============================================================== -->
                     <div class="row">
-                        <!-- column -->
+						<!-- column -->
                         <div class="col-lg-12">
-                            <!-- ##### Cool Facts Area Start ##### -->
-                            <section class="cool-facts-area section-padding-100-0">
-                                <div class="container">
-                                    <div class="row">
-									    <?php if(isset($admin_flag) && $admin_flag != 0) { ?>
-											<?php foreach ($datalevel as $value) { ?>
-												<a href="<?php echo base_url() . 'adminvocabulary/' . strtolower($value['level_name']); ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-													<div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-														<div class="icon">
-															<img src="<?php echo base_url() . $value['level_image']; ?>" alt="">
-														</div>
-														<h3 style="color:#3762f0;"><span class="counter"><?php echo $value['total']; ?></span></h3>
-														<h5 style="color:#404040;">Word</h5>
-														<h2><?php echo $value['level_name']; ?></h2>
-													</div>
-												</a>
-											<?php } ?>
-										<?php }else{ ?>
-											<h1 style="color:#404040;">You do not have sufficient access</h1>
-										<?php } ?>
-                                    </div>
-                                </div>
-                            </section>
-                            <!-- ##### Cool Facts Area End ##### -->
+                            <!-- card new -->
+                            <div class="card">
+                                <ul class="list-style-none">
+									<?php if(isset($admin_flag) && $admin_flag != 0) { ?>
+										<form class="login100-form validate-form" action="<?php echo base_url('createvocabularybeginner/checkVocabulary/')?>" method="POST" >
+											<?php echo form_error('vocabulary_name_1'); ?>
+											<?php echo form_error('vocabulary_mean_1'); ?>
+											<div class="input-group wrap-input100">
+												<div class="input-group-prepend">
+													<span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 01</span>
+												</div>
+												<input type="text" name="vocabulary_name_1" value="<?=set_value('vocabulary_name_1')?>" placeholder="Vocabulary Name 01" class="form-control">
+												<input type="text" name="vocabulary_mean_1" value="<?=set_value('vocabulary_mean_1')?>" placeholder="Vocabulary Mean 01" class="form-control">
+											</div>
+											<?php echo form_error('vocabulary_name_2'); ?>
+											<?php echo form_error('vocabulary_mean_2'); ?>
+											<div class="input-group wrap-input100">
+												<div class="input-group-prepend">
+													<span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 02</span>
+												</div>
+												<input type="text" name="vocabulary_name_2" value="<?=set_value('vocabulary_name_2')?>" placeholder="Vocabulary Name 02" class="form-control">
+												<input type="text" name="vocabulary_mean_2" value="<?=set_value('vocabulary_mean_2')?>" placeholder="Vocabulary Mean 02" class="form-control">
+											</div>
+											<?php echo form_error('vocabulary_name_3'); ?>
+											<?php echo form_error('vocabulary_mean_3'); ?>
+											<div class="input-group wrap-input100">
+												<div class="input-group-prepend">
+													<span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 03</span>
+												</div>
+												<input type="text" name="vocabulary_name_3" value="<?=set_value('vocabulary_name_3')?>" placeholder="Vocabulary Name 03" class="form-control">
+												<input type="text" name="vocabulary_mean_3" value="<?=set_value('vocabulary_mean_3')?>" placeholder="Vocabulary Mean 03" class="form-control">
+											</div>
+											<?php echo form_error('vocabulary_name_4'); ?>
+											<?php echo form_error('vocabulary_mean_4'); ?>
+											<div class="input-group wrap-input100">
+												<div class="input-group-prepend">
+													<span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 04</span>
+												</div>
+												<input type="text" name="vocabulary_name_4" value="<?=set_value('vocabulary_name_4')?>" placeholder="Vocabulary Name 04" class="form-control">
+												<input type="text" name="vocabulary_mean_4" value="<?=set_value('vocabulary_mean_4')?>" placeholder="Vocabulary Mean 04" class="form-control">
+											</div>
+											<?php echo form_error('vocabulary_name_5'); ?>
+											<?php echo form_error('vocabulary_mean_5'); ?>
+											<div class="input-group wrap-input100">
+												<div class="input-group-prepend">
+													<span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 05</span>
+												</div>
+												<input type="text" name="vocabulary_name_5" value="<?=set_value('vocabulary_name_5')?>" placeholder="Vocabulary Name 05" class="form-control">
+												<input type="text" name="vocabulary_mean_5" value="<?=set_value('vocabulary_mean_5')?>" placeholder="Vocabulary Mean 05" class="form-control">
+											</div>
+											<?php echo form_error('vocabulary_name_6'); ?>
+											<?php echo form_error('vocabulary_mean_6'); ?>
+											<div class="input-group wrap-input100">
+												<div class="input-group-prepend">
+													<span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 06</span>
+												</div>
+												<input type="text" name="vocabulary_name_6" value="<?=set_value('vocabulary_name_6')?>" placeholder="Vocabulary Name 06" class="form-control">
+												<input type="text" name="vocabulary_mean_6" value="<?=set_value('vocabulary_mean_6')?>" placeholder="Vocabulary Mean 06" class="form-control">
+											</div>
+											<?php echo form_error('vocabulary_name_7'); ?>
+											<?php echo form_error('vocabulary_mean_7'); ?>
+											<div class="input-group wrap-input100">
+												<div class="input-group-prepend">
+													<span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 07</span>
+												</div>
+												<input type="text" name="vocabulary_name_7" value="<?=set_value('vocabulary_name_7')?>" placeholder="Vocabulary Name 07" class="form-control">
+												<input type="text" name="vocabulary_mean_7" value="<?=set_value('vocabulary_mean_7')?>" placeholder="Vocabulary Mean 07" class="form-control">
+											</div>
+											<?php echo form_error('vocabulary_name_8'); ?>
+											<?php echo form_error('vocabulary_mean_8'); ?>
+											<div class="input-group wrap-input100">
+												<div class="input-group-prepend">
+													<span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 08</span>
+												</div>
+												<input type="text" name="vocabulary_name_8" value="<?=set_value('vocabulary_name_8')?>" placeholder="Vocabulary Name 08" class="form-control">
+												<input type="text" name="vocabulary_mean_8" value="<?=set_value('vocabulary_mean_8')?>" placeholder="Vocabulary Mean 08" class="form-control">
+											</div>
+											<?php echo form_error('vocabulary_name_9'); ?>
+											<?php echo form_error('vocabulary_mean_9'); ?>
+											<div class="input-group wrap-input100">
+												<div class="input-group-prepend">
+													<span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 09</span>
+												</div>
+												<input type="text" name="vocabulary_name_9" value="<?=set_value('vocabulary_name_9')?>" placeholder="Vocabulary Name 09" class="form-control">
+												<input type="text" name="vocabulary_mean_9" value="<?=set_value('vocabulary_mean_9')?>" placeholder="Vocabulary Mean 09" class="form-control">
+											</div>
+											<?php echo form_error('vocabulary_name_10'); ?>
+											<?php echo form_error('vocabulary_mean_10'); ?>
+											<div class="input-group wrap-input100">
+												<div class="input-group-prepend">
+													<span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 10</span>
+												</div>
+												<input type="text" name="vocabulary_name_10" value="<?=set_value('vocabulary_name_10')?>" placeholder="Vocabulary Name 10" class="form-control">
+												<input type="text" name="vocabulary_mean_10" value="<?=set_value('vocabulary_mean_10')?>" placeholder="Vocabulary Mean 10" class="form-control">
+											</div>
+											<?php echo form_error('vocabulary_name_11'); ?>
+											<?php echo form_error('vocabulary_mean_11'); ?>
+											<div class="input-group wrap-input100">
+												<div class="input-group-prepend">
+													<span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 11</span>
+												</div>
+												<input type="text" name="vocabulary_name_11" value="<?=set_value('vocabulary_name_11')?>" placeholder="Vocabulary Name 11" class="form-control">
+												<input type="text" name="vocabulary_mean_11" value="<?=set_value('vocabulary_mean_11')?>" placeholder="Vocabulary Mean 11" class="form-control">
+											</div>
+											<?php echo form_error('vocabulary_name_12'); ?>
+											<?php echo form_error('vocabulary_mean_12'); ?>
+											<div class="input-group wrap-input100">
+												<div class="input-group-prepend">
+													<span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 12</span>
+												</div>
+												<input type="text" name="vocabulary_name_12" value="<?=set_value('vocabulary_name_12')?>" placeholder="Vocabulary Name 12" class="form-control">
+												<input type="text" name="vocabulary_mean_12" value="<?=set_value('vocabulary_mean_12')?>" placeholder="Vocabulary Mean 12" class="form-control">
+											</div>
+											<div class="container-contact100-form-btn">
+												<button type="submit" name="submit" class="contact100-form-btn">
+													Submit
+												</button>
+											</div>
+										</form>
+									<?php }else{ ?>
+										<h1 style="color:#404040;">You do not have sufficient access</h1>
+									<?php } ?>
+                                </ul>
+                            </div>
                         </div>
                         <!-- column -->
                     </div>

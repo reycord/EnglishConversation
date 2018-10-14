@@ -15,6 +15,8 @@
         <link href="<?php echo base_url();?>vendors/assets/libs/flot/css/float-chart.css" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="<?php echo base_url();?>vendors/dist/css/style.min.css" rel="stylesheet">
+        <!-- <link href="<?php echo base_url();?>vendors/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+        <link href="<?php echo base_url();?>vendors/dist/css/dataTables.bootstrap.min.css" rel="stylesheet">
     </head>
 
     <body>
@@ -153,12 +155,13 @@
                 <div class="page-breadcrumb">
                     <div class="row">
                         <div class="col-12 d-flex no-block align-items-center">
-                            <h4 class="page-title">Admin Vocabulary</h4>
+                            <h4 class="page-title">List Unit Vocabulary</h4>
                             <div class="ml-auto text-right">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Admin Vocabulary</li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminvocabulary">Admin Vocabulary</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">List Unit Vocabulary</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -183,20 +186,31 @@
                             <section class="cool-facts-area section-padding-100-0">
                                 <div class="container">
                                     <div class="row">
-									    <?php if(isset($admin_flag) && $admin_flag != 0) { ?>
-											<?php foreach ($datalevel as $value) { ?>
-												<a href="<?php echo base_url() . 'adminvocabulary/' . strtolower($value['level_name']); ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
-													<div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
-														<div class="icon">
-															<img src="<?php echo base_url() . $value['level_image']; ?>" alt="">
-														</div>
-														<h3 style="color:#3762f0;"><span class="counter"><?php echo $value['total']; ?></span></h3>
-														<h5 style="color:#404040;">Word</h5>
-														<h2><?php echo $value['level_name']; ?></h2>
-													</div>
-												</a>
-											<?php } ?>
-										<?php }else{ ?>
+                                        <?php if(isset($admin_flag) && $admin_flag != 0) { ?>
+                                            <div style="text-align:right; width:100%; padding:0;">
+                                                <a href="<?php echo base_url(); ?>createvocabularybeginner" class="btn btn-primary">Add Vocabulary Beginner</a>
+                                            </div>
+                                            <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width:500px;font-weight:bold;font-size:20px;">Unit Id</th>
+                                                        <th style="width:200px;font-weight:bold;font-size:20px;">Delete Record</th>
+                                                        <th style="width:200px;font-weight:bold;font-size:20px;">Modifier Record</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php foreach ($dataunit as $value) {
+                                                        if ($value['level_id'] == '1') {
+                                                    ?>
+                                                    <tr>
+                                                        <td style="font-size:22px;"><?php echo $value['unit_name']; ?></td>
+                                                        <td><a class="btn btn-primary" style="color:white;">Delete <?php echo strtolower($value['unit_name']); ?></a></td>
+                                                        <td><a class="btn btn-primary" style="color:white;">Modifier <?php echo strtolower($value['unit_name']); ?></a></td>
+                                                    </tr>
+                                                    <?php } } ?>
+                                                </tbody>
+                                            </table>
+                                        <?php }else{ ?>
 											<h1 style="color:#404040;">You do not have sufficient access</h1>
 										<?php } ?>
                                     </div>
@@ -237,6 +251,8 @@
         <script src="<?php echo base_url();?>vendors/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="<?php echo base_url();?>vendors/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
         <script src="<?php echo base_url();?>vendors/assets/extra-libs/sparkline/sparkline.js"></script>
+        <script src="<?php echo base_url();?>vendors/dist/js/jquery.dataTables.min.js"></script>
+        <script src="<?php echo base_url();?>vendors/dist/js/dataTables.bootstrap.min.js"></script>
         <!--Wave Effects -->
         <script src="<?php echo base_url();?>vendors/dist/js/waves.js"></script>
         <!--Menu sidebar -->
@@ -252,6 +268,17 @@
         <script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.crosshair.js"></script>
         <script src="<?php echo base_url();?>vendors/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
         <script src="<?php echo base_url();?>vendors/dist/js/pages/chart/chart-page-init.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#example').DataTable({
+                    "ordering": false,
+                    "info": false,
+                    "lengthChange": false,
+                    "searching": false
+                });
+            } );
+        </script>
 
     </body>
 
