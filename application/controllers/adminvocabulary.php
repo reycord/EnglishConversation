@@ -47,4 +47,25 @@ class AdminVocabulary extends My_Controller {
         //Load view vocabulary beginner
         $this->load->view('adminvocabulary/beginner', $data);
     }
+
+    public function delete_row_beginner($unit_id){
+        $this->adminvocabulary_model->did_delete_row_beginner($unit_id);
+
+        $data = null;
+        
+        //Get data unit
+        $dataunit = $this->vocabulary_model->getUnitNameBeginner();
+
+        $data['dataunit'] = $dataunit;
+        
+        if($this->session->userdata('user')) {
+            $getdata = $this->session->userdata('user');
+            $data['user_name'] = $getdata['user_name'];
+            $data['email'] = $getdata['email'];
+            $data['admin_flag'] = $getdata['admin_flag'];
+        }
+
+        //Load view vocabulary beginner
+        $this->load->view('adminvocabulary/beginner', $data);
+    }
 }

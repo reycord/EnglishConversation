@@ -204,7 +204,7 @@
                                                     ?>
                                                     <tr>
                                                         <td style="font-size:22px;"><?php echo $value['unit_name']; ?></td>
-                                                        <td><a class="btn btn-primary" style="color:white;">Delete <?php echo strtolower($value['unit_name']); ?></a></td>
+                                                        <td><a class="btn btn-primary" style="color:white;" onclick="return deletechecked();" href="<?php echo base_url(); ?>adminvocabulary/delete_row_beginner/<?php echo $value['unit_id']; ?>">Delete <?php echo strtolower($value['unit_name']); ?></a></td>
                                                         <td><a class="btn btn-primary" style="color:white;" href="<?php echo base_url(); ?>modifiervocabularybeginner?unitId=<?php echo $value['unit_id']; ?>">Modifier <?php echo strtolower($value['unit_name']); ?></a></td>
                                                     </tr>
                                                     <?php } } ?>
@@ -278,6 +278,18 @@
                     "searching": false
                 });
             } );
+
+            function deletechecked()
+            {
+                if(confirm("Do you want delete record ?"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;  
+                } 
+            }
         </script>
 
     </body>

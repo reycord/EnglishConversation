@@ -36,4 +36,11 @@ class adminvocabulary_model extends My_Model
         }
         return null;
     }
+
+    public function did_delete_row_beginner($unit_id){
+        $this->db->where('unit_id', $unit_id);
+        $this->db->where('level_id', '1');
+        $this->db->where('del_fg', '0');
+        $this->db->delete('tbl_learn_vocabulary');
+    }
 }
