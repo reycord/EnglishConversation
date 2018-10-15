@@ -15,8 +15,7 @@
         <link href="<?php echo base_url();?>vendors/assets/libs/flot/css/float-chart.css" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="<?php echo base_url();?>vendors/dist/css/style.min.css" rel="stylesheet">
-        <!-- <link href="<?php echo base_url();?>vendors/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-        <link href="<?php echo base_url();?>vendors/dist/css/dataTables.bootstrap.min.css" rel="stylesheet">
+		<link href="<?php echo base_url();?>vendors/dist/css/main_translate.css" rel="stylesheet">
     </head>
 
     <body>
@@ -155,13 +154,14 @@
                 <div class="page-breadcrumb">
                     <div class="row">
                         <div class="col-12 d-flex no-block align-items-center">
-                            <h4 class="page-title">List Unit Vocabulary</h4>
+                            <h4 class="page-title">Modifier Vocabulary Beginner</h4>
                             <div class="ml-auto text-right">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
+										<li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
                                         <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminvocabulary">Admin Vocabulary</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">List Unit Vocabulary</li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminvocabulary/beginner">Beginner</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Modifier Vocabulary Beginner</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -180,43 +180,132 @@
                     <!-- Recent comment and chats -->
                     <!-- ============================================================== -->
                     <div class="row">
-                        <!-- column -->
+						<!-- column -->
                         <div class="col-lg-12">
-                            <!-- ##### Cool Facts Area Start ##### -->
-                            <section class="cool-facts-area section-padding-100-0">
-                                <div class="container">
-                                    <div class="row">
-                                        <?php if(isset($admin_flag) && $admin_flag != 0) { ?>
-                                            <div style="text-align:right; width:100%; padding:0;">
-                                                <a href="<?php echo base_url(); ?>createvocabularybeginner" class="btn btn-primary">Add Vocabulary Beginner</a>
-                                            </div>
-                                            <table id="example" class="table table-striped table-bordered" style="width:100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th style="width:500px;font-weight:bold;font-size:20px;">Unit Id</th>
-                                                        <th style="width:200px;font-weight:bold;font-size:20px;">Delete Record</th>
-                                                        <th style="width:200px;font-weight:bold;font-size:20px;">Modifier Record</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php foreach ($dataunit as $value) {
-                                                        if ($value['level_id'] == '1') {
-                                                    ?>
-                                                    <tr>
-                                                        <td style="font-size:22px;"><?php echo $value['unit_name']; ?></td>
-                                                        <td><a class="btn btn-primary" style="color:white;">Delete <?php echo strtolower($value['unit_name']); ?></a></td>
-                                                        <td><a class="btn btn-primary" style="color:white;" href="<?php echo base_url(); ?>modifiervocabularybeginner?unitId=<?php echo $value['unit_id']; ?>">Modifier <?php echo strtolower($value['unit_name']); ?></a></td>
-                                                    </tr>
-                                                    <?php } } ?>
-                                                </tbody>
-                                            </table>
-                                        <?php }else{ ?>
-											<h1 style="color:#404040;">You do not have sufficient access</h1>
-										<?php } ?>
-                                    </div>
-                                </div>
-                            </section>
-                            <!-- ##### Cool Facts Area End ##### -->
+                            <!-- card new -->
+                            <div class="card">
+                                <ul class="list-style-none">
+									<?php if(isset($admin_flag) && $admin_flag != 0) { ?>
+										<form class="login100-form validate-form" action="<?php echo base_url('modifiervocabularybeginner/checkVocabulary/')?>" method="POST" >
+                                                <?php echo form_error('vocabulary_name_1'); ?>
+                                                <?php echo form_error('vocabulary_mean_1'); ?>
+                                                <div class="input-group wrap-input100">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 01</span>
+                                                    </div>
+                                                    <input type="text" name="vocabulary_name_1" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '1') { echo $value['vocabulary_name'];}}}else{ ?><?=set_value('vocabulary_name_1')?><?php } ?>" placeholder="Vocabulary Name 01" class="form-control">
+                                                    <input type="text" name="vocabulary_mean_1" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '1') { echo $value['vocabulary_mean'];}}}else{ ?><?=set_value('vocabulary_mean_1')?><?php } ?>" placeholder="Vocabulary Mean 01" class="form-control">
+                                                </div>
+                                                <?php echo form_error('vocabulary_name_2'); ?>
+                                                <?php echo form_error('vocabulary_mean_2'); ?>
+                                                <div class="input-group wrap-input100">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 02</span>
+                                                    </div>
+                                                    <input type="text" name="vocabulary_name_2" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '2') { echo $value['vocabulary_name'];}}}else{ ?><?=set_value('vocabulary_name_2')?><?php } ?>" placeholder="Vocabulary Name 02" class="form-control">
+                                                    <input type="text" name="vocabulary_mean_2" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '2') { echo $value['vocabulary_mean'];}}}else{ ?><?=set_value('vocabulary_mean_2')?><?php } ?>" placeholder="Vocabulary Mean 02" class="form-control">
+                                                </div>
+                                                <?php echo form_error('vocabulary_name_3'); ?>
+                                                <?php echo form_error('vocabulary_mean_3'); ?>
+                                                <div class="input-group wrap-input100">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 03</span>
+                                                    </div>
+                                                    <input type="text" name="vocabulary_name_3" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '3') { echo $value['vocabulary_name'];}}}else{ ?><?=set_value('vocabulary_name_3')?><?php } ?>" placeholder="Vocabulary Name 03" class="form-control">
+                                                    <input type="text" name="vocabulary_mean_3" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '3') { echo $value['vocabulary_mean'];}}}else{ ?><?=set_value('vocabulary_mean_3')?><?php } ?>" placeholder="Vocabulary Mean 03" class="form-control">
+                                                </div>
+                                                <?php echo form_error('vocabulary_name_4'); ?>
+                                                <?php echo form_error('vocabulary_mean_4'); ?>
+                                                <div class="input-group wrap-input100">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 04</span>
+                                                    </div>
+                                                    <input type="text" name="vocabulary_name_4" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '4') { echo $value['vocabulary_name'];}}}else{ ?><?=set_value('vocabulary_name_4')?><?php } ?>" placeholder="Vocabulary Name 04" class="form-control">
+                                                    <input type="text" name="vocabulary_mean_4" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '4') { echo $value['vocabulary_mean'];}}}else{ ?><?=set_value('vocabulary_mean_4')?><?php } ?>" placeholder="Vocabulary Mean 04" class="form-control">
+                                                </div>
+                                                <?php echo form_error('vocabulary_name_5'); ?>
+                                                <?php echo form_error('vocabulary_mean_5'); ?>
+                                                <div class="input-group wrap-input100">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 05</span>
+                                                    </div>
+                                                    <input type="text" name="vocabulary_name_5" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '5') { echo $value['vocabulary_name'];}}}else{ ?><?=set_value('vocabulary_name_5')?><?php } ?>" placeholder="Vocabulary Name 05" class="form-control">
+                                                    <input type="text" name="vocabulary_mean_5" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '5') { echo $value['vocabulary_mean'];}}}else{ ?><?=set_value('vocabulary_mean_5')?><?php } ?>" placeholder="Vocabulary Mean 05" class="form-control">
+                                                </div>
+                                                <?php echo form_error('vocabulary_name_6'); ?>
+                                                <?php echo form_error('vocabulary_mean_6'); ?>
+                                                <div class="input-group wrap-input100">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 06</span>
+                                                    </div>
+                                                    <input type="text" name="vocabulary_name_6" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '6') { echo $value['vocabulary_name'];}}}else{ ?><?=set_value('vocabulary_name_6')?><?php } ?>" placeholder="Vocabulary Name 06" class="form-control">
+                                                    <input type="text" name="vocabulary_mean_6" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '6') { echo $value['vocabulary_mean'];}}}else{ ?><?=set_value('vocabulary_mean_6')?><?php } ?>" placeholder="Vocabulary Mean 06" class="form-control">
+                                                </div>
+                                                <?php echo form_error('vocabulary_name_7'); ?>
+                                                <?php echo form_error('vocabulary_mean_7'); ?>
+                                                <div class="input-group wrap-input100">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 07</span>
+                                                    </div>
+                                                    <input type="text" name="vocabulary_name_7" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '7') { echo $value['vocabulary_name'];}}}else{ ?><?=set_value('vocabulary_name_7')?><?php } ?>" placeholder="Vocabulary Name 07" class="form-control">
+                                                    <input type="text" name="vocabulary_mean_7" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '7') { echo $value['vocabulary_mean'];}}}else{ ?><?=set_value('vocabulary_mean_7')?><?php } ?>" placeholder="Vocabulary Mean 07" class="form-control">
+                                                </div>
+                                                <?php echo form_error('vocabulary_name_8'); ?>
+                                                <?php echo form_error('vocabulary_mean_8'); ?>
+                                                <div class="input-group wrap-input100">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 08</span>
+                                                    </div>
+                                                    <input type="text" name="vocabulary_name_8" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '8') { echo $value['vocabulary_name'];}}}else{ ?><?=set_value('vocabulary_name_8')?><?php } ?>" placeholder="Vocabulary Name 08" class="form-control">
+                                                    <input type="text" name="vocabulary_mean_8" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '8') { echo $value['vocabulary_mean'];}}}else{ ?><?=set_value('vocabulary_mean_8')?><?php } ?>" placeholder="Vocabulary Mean 08" class="form-control">
+                                                </div>
+                                                <?php echo form_error('vocabulary_name_9'); ?>
+                                                <?php echo form_error('vocabulary_mean_9'); ?>
+                                                <div class="input-group wrap-input100">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 09</span>
+                                                    </div>
+                                                    <input type="text" name="vocabulary_name_9" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '9') { echo $value['vocabulary_name'];}}}else{ ?><?=set_value('vocabulary_name_9')?><?php } ?>" placeholder="Vocabulary Name 09" class="form-control">
+                                                    <input type="text" name="vocabulary_mean_9" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '9') { echo $value['vocabulary_mean'];}}}else{ ?><?=set_value('vocabulary_mean_9')?><?php } ?>" placeholder="Vocabulary Mean 09" class="form-control">
+                                                </div>
+                                                <?php echo form_error('vocabulary_name_10'); ?>
+                                                <?php echo form_error('vocabulary_mean_10'); ?>
+                                                <div class="input-group wrap-input100">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 10</span>
+                                                    </div>
+                                                    <input type="text" name="vocabulary_name_10" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '10') { echo $value['vocabulary_name'];}}}else{ ?><?=set_value('vocabulary_name_10')?><?php } ?>" placeholder="Vocabulary Name 10" class="form-control">
+                                                    <input type="text" name="vocabulary_mean_10" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '10') { echo $value['vocabulary_mean'];}}}else{ ?><?=set_value('vocabulary_mean_10')?><?php } ?>" placeholder="Vocabulary Mean 10" class="form-control">
+                                                </div>
+                                                <?php echo form_error('vocabulary_name_11'); ?>
+                                                <?php echo form_error('vocabulary_mean_11'); ?>
+                                                <div class="input-group wrap-input100">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 11</span>
+                                                    </div>
+                                                    <input type="text" name="vocabulary_name_11" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '11') { echo $value['vocabulary_name'];}}}else{ ?><?=set_value('vocabulary_name_11')?><?php } ?>" placeholder="Vocabulary Name 11" class="form-control">
+                                                    <input type="text" name="vocabulary_mean_11" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '11') { echo $value['vocabulary_mean'];}}}else{ ?><?=set_value('vocabulary_mean_11')?><?php } ?>" placeholder="Vocabulary Mean 11" class="form-control">
+                                                </div>
+                                                <?php echo form_error('vocabulary_name_12'); ?>
+                                                <?php echo form_error('vocabulary_mean_12'); ?>
+                                                <div class="input-group wrap-input100">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" style="font-size:20px;">Vocabulary Name And Mean 12</span>
+                                                    </div>
+                                                    <input type="text" name="vocabulary_name_12" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '12') { echo $value['vocabulary_name'];}}}else{ ?><?=set_value('vocabulary_name_12')?><?php } ?>" placeholder="Vocabulary Name 12" class="form-control">
+                                                    <input type="text" name="vocabulary_mean_12" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { if ($value['screen_id'] == '12') { echo $value['vocabulary_mean'];}}}else{ ?><?=set_value('vocabulary_mean_12')?><?php } ?>" placeholder="Vocabulary Mean 12" class="form-control">
+                                                </div>
+											<div class="container-contact100-form-btn">
+												<button type="submit" name="submit" class="contact100-form-btn">
+													Submit
+												</button>
+											</div>
+										</form>
+									<?php }else{ ?>
+										<h1 style="color:#404040;">You do not have sufficient access</h1>
+									<?php } ?>
+                                </ul>
+                            </div>
                         </div>
                         <!-- column -->
                     </div>
@@ -251,8 +340,6 @@
         <script src="<?php echo base_url();?>vendors/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="<?php echo base_url();?>vendors/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
         <script src="<?php echo base_url();?>vendors/assets/extra-libs/sparkline/sparkline.js"></script>
-        <script src="<?php echo base_url();?>vendors/dist/js/jquery.dataTables.min.js"></script>
-        <script src="<?php echo base_url();?>vendors/dist/js/dataTables.bootstrap.min.js"></script>
         <!--Wave Effects -->
         <script src="<?php echo base_url();?>vendors/dist/js/waves.js"></script>
         <!--Menu sidebar -->
@@ -268,17 +355,6 @@
         <script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.crosshair.js"></script>
         <script src="<?php echo base_url();?>vendors/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
         <script src="<?php echo base_url();?>vendors/dist/js/pages/chart/chart-page-init.js"></script>
-
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('#example').DataTable({
-                    "ordering": false,
-                    "info": false,
-                    "lengthChange": false,
-                    "searching": false
-                });
-            } );
-        </script>
 
     </body>
 

@@ -19,4 +19,21 @@ class adminvocabulary_model extends My_Model
         }
         return 0;
     }
+    //get data with unit_id from tbl_learn_vocabulary
+    public function getDataVocabularyWithUnitId($unit_id){
+        $this->db->select('tbl_learn_vocabulary.vocabulary_name as vocabulary_name');
+        $this->db->select('tbl_learn_vocabulary.vocabulary_mean as vocabulary_mean');
+        $this->db->select('tbl_learn_vocabulary.screen_id as screen_id');
+        $this->db->from('tbl_learn_vocabulary');
+        $this->db->where('tbl_learn_vocabulary.level_id', '1');
+        $this->db->where('tbl_learn_vocabulary.unit_id', $unit_id);
+        $this->db->where('tbl_learn_vocabulary.del_fg', '0');
+        $this->db->order_by('tbl_learn_vocabulary.screen_id');
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if (sizeof($result) > 0) {
+            return $result;
+        }
+        return null;
+    }
 }
