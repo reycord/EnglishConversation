@@ -1,5 +1,5 @@
 <?php
-class ModifierVocabularyBeginner extends My_Controller {
+class ModifierVocabularyAdvanced extends My_Controller {
 
     function __construct(){
         parent::__construct();
@@ -23,10 +23,10 @@ class ModifierVocabularyBeginner extends My_Controller {
             $this->session->set_userdata('user', $data);
         }
 
-        $dataunit = $this->adminvocabulary_model->getDataVocabularyBeginnerWithUnitId($splitURL);
+        $dataunit = $this->adminvocabulary_model->getDataVocabularyAdvancedWithUnitId($splitURL);
         $data['dataunit'] = $dataunit;
 
-        $this->load->view('modifiervocabularybeginner', $data);
+        $this->load->view('modifiervocabularyadvanced', $data);
     }
 
     public function checkVocabulary(){
@@ -61,7 +61,7 @@ class ModifierVocabularyBeginner extends My_Controller {
                     if( (($_POST['vocabulary_name_'.$i] == "") && ($_POST['vocabulary_mean_'.$i] == "")) == FALSE){
                         //update data TBL_LEARN_VOCABULAR
                         $this->db->trans_begin();
-                        $this->db->where('level_id', '1');
+                        $this->db->where('level_id', '3');
                         $this->db->where('unit_id', $data_unit);
                         $this->db->where('screen_id', $i);
                         $this->db->update('tbl_learn_vocabulary', $data);
@@ -73,9 +73,9 @@ class ModifierVocabularyBeginner extends My_Controller {
                     }
                 }
                 //Redirect to Admin Vocabulary Page
-                redirect('adminvocabulary/beginner', 'refresh');         
+                redirect('adminvocabulary/advanced', 'refresh');         
         }else{
-                $this->load->view('modifiervocabularybeginner', $data);
+                $this->load->view('modifiervocabularyadvanced', $data);
             }
         }
     }
