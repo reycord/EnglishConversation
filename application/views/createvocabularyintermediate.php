@@ -161,7 +161,7 @@
 										<li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
                                         <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminvocabulary">Admin Vocabulary</a></li>
                                         <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminvocabulary/intermediate">Intermediate</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Creare Vocabulary Intermediate</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Create Vocabulary Intermediate</li>
                                     </ol>
                                 </nav>
                             </div>

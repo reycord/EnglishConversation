@@ -161,7 +161,7 @@
 										<li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
                                         <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminlistening">Admin Listening</a></li>
                                         <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminlistening/beginner">Beginner</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Creare Listening Beginner</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Create Listening Beginner</li>
                                     </ol>
                                 </nav>
                             </div>

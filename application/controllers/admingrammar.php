@@ -6,6 +6,8 @@ class AdminGrammar extends My_Controller {
         $this->load->library('session');
         $this->load->library('form_validation');
         $this->load->model('unit_model');
+        $this->load->model('level_model');
+        $this->load->model('grammar_model');
         $this->load->model('admingrammar_model');
     }
 
@@ -19,47 +21,131 @@ class AdminGrammar extends My_Controller {
             $data['admin_flag'] = $getdata['admin_flag'];
         }
 
+        //Get data level
+        $datalevel = $this->level_model->getLevelNameGrammar();
+
+        $data['datalevel'] = $datalevel;
+
         $this->load->view('admingrammar', $data);
     }
 
-    public function checkGrammar(){
+    public function beginner(){
         $data = null;
-        if (isset($_POST['submit'])){
-            //Check validate field data
-            $this->form_validation->set_rules('grammar_name', 'Grammar Name', 'trim|required');
-            $this->form_validation->set_rules('grammar_details', 'Grammar Details', 'trim|required');
-            $this->form_validation->set_error_delimiters('<p style="color:#d42a38">', '</p>');
+        
+        //Get data unit
+        $dataunit = $this->grammar_model->getUnitNameBeginner();
 
-            if ($this->form_validation->run() === TRUE){
-
-                if ($_POST['level'] === '1'){
-                    $unit_id = $this->unit_model->getNextUnitBeginnerGrammar();
-                }elseif($_POST['level'] === '2'){
-                    $unit_id = $this->unit_model->getNextUnitIntermediateGrammar();
-                }else{
-                    $unit_id = $this->unit_model->getNextUnitAdvancedGrammar();
-                }
-
-                $grammar_id = $this->admingrammar_model->getNextGrammarId();
-
-                $data = array(
-                    'grammar_id' => $grammar_id,
-                    'level_id' => $_POST['level'],
-                    'grammar_name' => $_POST['grammar_name'],
-                    'grammar_details' => $_POST['grammar_details'],
-                    'unit_id' => $unit_id,
-                    'del_fg' => '0'
-                );
-                
-                //Add data into table TBL_GRAMMAR
-                $this->db->insert('tbl_grammar', $data);
-
-                //Redirect to Admin Grammar Page
-                redirect('admingrammar', 'refresh');
-            }
-            else{
-                $this->load->view('admingrammar', $data);
-            }
+        $data['dataunit'] = $dataunit;
+        
+        if($this->session->userdata('user')) {
+            $getdata = $this->session->userdata('user');
+            $data['user_name'] = $getdata['user_name'];
+            $data['email'] = $getdata['email'];
+            $data['admin_flag'] = $getdata['admin_flag'];
         }
+
+        //Load view grammar beginner
+        $this->load->view('admingrammar/beginner', $data);
+    }
+
+    public function delete_row_beginner($unit_id){
+        $this->admingrammar_model->did_delete_row_beginner($unit_id);
+
+        $data = null;
+        
+        //Get data unit
+        $dataunit = $this->grammar_model->getUnitNameBeginner();
+
+        $data['dataunit'] = $dataunit;
+        
+        if($this->session->userdata('user')) {
+            $getdata = $this->session->userdata('user');
+            $data['user_name'] = $getdata['user_name'];
+            $data['email'] = $getdata['email'];
+            $data['admin_flag'] = $getdata['admin_flag'];
+        }
+
+        //Load view grammar beginner
+        $this->load->view('admingrammar/beginner', $data);
+    }
+
+    public function intermediate(){
+        $data = null;
+        
+        //Get data unit
+        $dataunit = $this->grammar_model->getUnitNameIntermediate();
+
+        $data['dataunit'] = $dataunit;
+        
+        if($this->session->userdata('user')) {
+            $getdata = $this->session->userdata('user');
+            $data['user_name'] = $getdata['user_name'];
+            $data['email'] = $getdata['email'];
+            $data['admin_flag'] = $getdata['admin_flag'];
+        }
+
+        //Load view grammar intermediate
+        $this->load->view('admingrammar/intermediate', $data);
+    }
+
+    public function delete_row_intermediate($unit_id){
+        $this->admingrammar_model->did_delete_row_intermediate($unit_id);
+
+        $data = null;
+        
+        //Get data unit
+        $dataunit = $this->grammar_model->getUnitNameIntermediate();
+
+        $data['dataunit'] = $dataunit;
+        
+        if($this->session->userdata('user')) {
+            $getdata = $this->session->userdata('user');
+            $data['user_name'] = $getdata['user_name'];
+            $data['email'] = $getdata['email'];
+            $data['admin_flag'] = $getdata['admin_flag'];
+        }
+
+        //Load view grammar intermediate
+        $this->load->view('admingrammar/intermediate', $data);
+    }
+
+    public function advanced(){
+        $data = null;
+        
+        //Get data unit
+        $dataunit = $this->grammar_model->getUnitNameAdvanced();
+
+        $data['dataunit'] = $dataunit;
+        
+        if($this->session->userdata('user')) {
+            $getdata = $this->session->userdata('user');
+            $data['user_name'] = $getdata['user_name'];
+            $data['email'] = $getdata['email'];
+            $data['admin_flag'] = $getdata['admin_flag'];
+        }
+
+        //Load view grammar advanced
+        $this->load->view('admingrammar/advanced', $data);
+    }
+
+    public function delete_row_advanced($unit_id){
+        $this->admingrammar_model->did_delete_row_advanced($unit_id);
+
+        $data = null;
+        
+        //Get data unit
+        $dataunit = $this->grammar_model->getUnitNameAdvanced();
+
+        $data['dataunit'] = $dataunit;
+        
+        if($this->session->userdata('user')) {
+            $getdata = $this->session->userdata('user');
+            $data['user_name'] = $getdata['user_name'];
+            $data['email'] = $getdata['email'];
+            $data['admin_flag'] = $getdata['admin_flag'];
+        }
+
+        //Load view grammar advanced
+        $this->load->view('admingrammar/advanced', $data);
     }
 }

@@ -15,7 +15,8 @@
         <link href="<?php echo base_url();?>vendors/assets/libs/flot/css/float-chart.css" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="<?php echo base_url();?>vendors/dist/css/style.min.css" rel="stylesheet">
-		<link href="<?php echo base_url();?>vendors/dist/css/main_translate.css" rel="stylesheet">
+        <!-- <link href="<?php echo base_url();?>vendors/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+        <link href="<?php echo base_url();?>vendors/dist/css/dataTables.bootstrap.min.css" rel="stylesheet">
     </head>
 
     <body>
@@ -154,14 +155,13 @@
                 <div class="page-breadcrumb">
                     <div class="row">
                         <div class="col-12 d-flex no-block align-items-center">
-                            <h4 class="page-title">Create Listening Intermediate</h4>
+                            <h4 class="page-title">List Unit Grammar</h4>
                             <div class="ml-auto text-right">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-										<li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminlistening">Admin Listening</a></li>
-                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminlistening/intermediate">Intermediate</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Create Listening Intermediate</li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>admingrammar">Admin Grammar</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">List Unit Grammar</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -180,65 +180,43 @@
                     <!-- Recent comment and chats -->
                     <!-- ============================================================== -->
                     <div class="row">
-						<!-- column -->
+                        <!-- column -->
                         <div class="col-lg-12">
-                            <!-- card new -->
-                            <div class="card">
-                                <ul class="list-style-none">
-									<?php if(isset($admin_flag) && $admin_flag != 0) { ?>
-										<form class="login100-form validate-form" action="<?php echo base_url('createlisteningintermediate/checkListening/')?>" method="POST" enctype="multipart/form-data">
-                                            <p style="color:#d42a38; text-align: center; width: 364px;"><?php echo (isset($err_message) ? $err_message : '') ?></p>
-                                            <?php echo form_error('mp3_file'); ?>
-											<div class="input-group wrap-input100">
-                                                <div class="input-group-prepend">
-													<span class="input-group-text" style="font-size:20px;">Link File Mp3</span>
-												</div>
-                                                <div class="input-group">
-                                                </div>
-                                                <input type="file" name="mp3_file" class="file" accept=".mp3" style="visibility:hidden;position:absolute;">
-                                                <input type="text" class="form-control" name="mp3_file" disabled accept=".mp3" placeholder="Upload mp3 File" style="width:85%!important;display:initial!important;height:80%!important;">
-                                                <button class="browse btn btn-primary input-lg" type="button" style="height:80%!important;"><i class="glyphicon glyphicon-search"></i> Browse</button>
-                                                <span class="focus-input100"></span>
-											</div>
-
-											<?php echo form_error('listening_name'); ?>
-											<div class="input-group wrap-input100">
-                                                <div class="input-group-prepend">
-													<span class="input-group-text" style="font-size:20px;">Listening Name</span>
-												</div>
-                                                <div class="tag_listening_name">
-                                                    <a href="#" class="dis-block txt3 hov1 p-t-10 p-b-10" style="font-size:27px;">
-                                                        <i class="fa fa-long-arrow-down m-l-5"></i> h1 tag<i class="fa fa-long-arrow-down m-l-5"></i>
-                                                    </a>
-                                                </div>
-                                                <input class="input100" type="text" name="listening_name" id="listening_name" value="<?=set_value('listening_name')?>" placeholder="Listening Name">
-                                                <span class="focus-input100"></span>
-											</div>
-
-											<?php echo form_error('listening_details'); ?>
-											<div class="input-group wrap-input100">
-                                                <div class="input-group-prepend">
-													<span class="input-group-text" style="font-size:20px;">Listening Details</span>
-												</div>
-                                                <div class="tag_listening_details">
-                                                    <a href="#" id="p_tag" class="dis-block txt3 hov1 p-t-10 p-b-10" style="font-size:27px;">
-                                                        <i class="fa fa-long-arrow-down m-l-5"></i> p tag<i class="fa fa-long-arrow-down m-l-5"></i>
-                                                    </a>
-                                                </div>
-                                                <textarea class="input100" type="text" style="font-size:20px;" name="listening_details" id="listening_details" placeholder="Listening Details"><?=set_value('listening_details')?></textarea>
-                                                <span class="focus-input100"></span>
-											</div>
-											<div class="container-contact100-form-btn">
-												<button type="submit" name="submit" class="contact100-form-btn">
-													Submit
-												</button>
-											</div>
-										</form>
-									<?php }else{ ?>
-										<h1 style="color:#404040;">You do not have sufficient access</h1>
-									<?php } ?>
-                                </ul>
-                            </div>
+                            <!-- ##### Cool Facts Area Start ##### -->
+                            <section class="cool-facts-area section-padding-100-0">
+                                <div class="container">
+                                    <div class="row">
+                                        <?php if(isset($admin_flag) && $admin_flag != 0) { ?>
+                                            <div style="text-align:right; width:100%; padding:0;">
+                                                <a href="<?php echo base_url(); ?>creategrammarintermediate" class="btn btn-primary">Add Grammar Intermediate</a>
+                                            </div>
+                                            <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width:500px;font-weight:bold;font-size:20px;">Unit Id</th>
+                                                        <th style="width:200px;font-weight:bold;font-size:20px;">Delete Record</th>
+                                                        <th style="width:200px;font-weight:bold;font-size:20px;">Modifier Record</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php foreach ($dataunit as $value) {
+                                                        if ($value['level_id'] == '2') {
+                                                    ?>
+                                                    <tr>
+                                                        <td style="font-size:22px;"><?php echo $value['unit_name']; ?></td>
+                                                        <td><a class="btn btn-primary" style="color:white;" onclick="return deletechecked();" href="<?php echo base_url(); ?>admingrammar/delete_row_intermediate/<?php echo $value['unit_id']; ?>">Delete <?php echo strtolower($value['unit_name']); ?></a></td>
+                                                        <td><a class="btn btn-primary" style="color:white;" href="<?php echo base_url(); ?>modifiergrammarintermediate?unitId=<?php echo $value['unit_id']; ?>">Modifier <?php echo strtolower($value['unit_name']); ?></a></td>
+                                                    </tr>
+                                                    <?php } } ?>
+                                                </tbody>
+                                            </table>
+                                        <?php }else{ ?>
+											<h1 style="color:#404040;">You do not have sufficient access</h1>
+										<?php } ?>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- ##### Cool Facts Area End ##### -->
                         </div>
                         <!-- column -->
                     </div>
@@ -273,6 +251,8 @@
         <script src="<?php echo base_url();?>vendors/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="<?php echo base_url();?>vendors/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
         <script src="<?php echo base_url();?>vendors/assets/extra-libs/sparkline/sparkline.js"></script>
+        <script src="<?php echo base_url();?>vendors/dist/js/jquery.dataTables.min.js"></script>
+        <script src="<?php echo base_url();?>vendors/dist/js/dataTables.bootstrap.min.js"></script>
         <!--Wave Effects -->
         <script src="<?php echo base_url();?>vendors/dist/js/waves.js"></script>
         <!--Menu sidebar -->
@@ -290,31 +270,26 @@
         <script src="<?php echo base_url();?>vendors/dist/js/pages/chart/chart-page-init.js"></script>
 
         <script type="text/javascript">
-            $('.tag_listening_name a').click(function() {
-                var value = '<h1></h1>';
-                var input = $('#listening_name');
-                input.val(value);
-                input.focus();
-                input[0].setSelectionRange(value.length, value.length - 5);
-                return false;
-            });
-            $('#p_tag').click(function() {
-                var value_p_tag = '<p></p>';
-                var input_listening = $('#listening_details');
-                input_listening.val(input_listening.val() + value_p_tag);
-                input_listening.focus();
-                var value_input_listening = input_listening.val();
-                input_listening[0].setSelectionRange(value_input_listening.length, value_input_listening.length - 4);
-                return false;
-            });
-            $(document).on("click", ".browse", function() {
-                var file = $(this).parent().parent().parent().find(".file");
-                file.trigger("click");
-            });
-            $(document).on("change", ".file", function() {
-                // $(this).parent().find(".form-control").val($(this).val().replace(/C:\\fakepath\\/i, ""));
-                $(this).parent().find(".form-control").val($(this).val());
-            });
+            $(document).ready(function() {
+                $('#example').DataTable({
+                    "ordering": false,
+                    "info": false,
+                    "lengthChange": false,
+                    "searching": false
+                });
+            } );
+
+            function deletechecked()
+            {
+                if(confirm("Do you want delete record ?"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;  
+                } 
+            }
         </script>
 
     </body>

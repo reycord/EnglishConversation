@@ -154,14 +154,14 @@
                 <div class="page-breadcrumb">
                     <div class="row">
                         <div class="col-12 d-flex no-block align-items-center">
-                            <h4 class="page-title">Create Listening Intermediate</h4>
+                            <h4 class="page-title">Modifier Grammar Advanced</h4>
                             <div class="ml-auto text-right">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
 										<li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminlistening">Admin Listening</a></li>
-                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminlistening/intermediate">Intermediate</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Create Listening Intermediate</li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>admingrammar">Admin Grammar</a></li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>admingrammar/advanced">Advanced</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Modifier Grammar Advanced</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -186,46 +186,49 @@
                             <div class="card">
                                 <ul class="list-style-none">
 									<?php if(isset($admin_flag) && $admin_flag != 0) { ?>
-										<form class="login100-form validate-form" action="<?php echo base_url('createlisteningintermediate/checkListening/')?>" method="POST" enctype="multipart/form-data">
-                                            <p style="color:#d42a38; text-align: center; width: 364px;"><?php echo (isset($err_message) ? $err_message : '') ?></p>
-                                            <?php echo form_error('mp3_file'); ?>
+										<form class="login100-form validate-form" action="<?php echo base_url('modifiergrammaradvanced/checkGrammar/')?>" method="POST">
+                                            
+											<?php echo form_error('grammar_name'); ?>
 											<div class="input-group wrap-input100">
                                                 <div class="input-group-prepend">
-													<span class="input-group-text" style="font-size:20px;">Link File Mp3</span>
+													<span class="input-group-text" style="font-size:20px;">Grammar Name</span>
 												</div>
-                                                <div class="input-group">
-                                                </div>
-                                                <input type="file" name="mp3_file" class="file" accept=".mp3" style="visibility:hidden;position:absolute;">
-                                                <input type="text" class="form-control" name="mp3_file" disabled accept=".mp3" placeholder="Upload mp3 File" style="width:85%!important;display:initial!important;height:80%!important;">
-                                                <button class="browse btn btn-primary input-lg" type="button" style="height:80%!important;"><i class="glyphicon glyphicon-search"></i> Browse</button>
-                                                <span class="focus-input100"></span>
-											</div>
-
-											<?php echo form_error('listening_name'); ?>
-											<div class="input-group wrap-input100">
-                                                <div class="input-group-prepend">
-													<span class="input-group-text" style="font-size:20px;">Listening Name</span>
-												</div>
-                                                <div class="tag_listening_name">
+                                                <div class="tag_grammar_name">
                                                     <a href="#" class="dis-block txt3 hov1 p-t-10 p-b-10" style="font-size:27px;">
                                                         <i class="fa fa-long-arrow-down m-l-5"></i> h1 tag<i class="fa fa-long-arrow-down m-l-5"></i>
                                                     </a>
                                                 </div>
-                                                <input class="input100" type="text" name="listening_name" id="listening_name" value="<?=set_value('listening_name')?>" placeholder="Listening Name">
+                                                <input class="input100" type="text" name="grammar_name" id="grammar_name" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { echo $value['grammar_name'];}}else{ ?><?=set_value('grammar_name')?><?php } ?>" placeholder="Grammar Name">
                                                 <span class="focus-input100"></span>
 											</div>
 
-											<?php echo form_error('listening_details'); ?>
+											<?php echo form_error('grammar_details'); ?>
 											<div class="input-group wrap-input100">
                                                 <div class="input-group-prepend">
-													<span class="input-group-text" style="font-size:20px;">Listening Details</span>
+													<span class="input-group-text" style="font-size:20px;">Grammar Details</span>
 												</div>
-                                                <div class="tag_listening_details">
+                                                <div class="tag_grammar_details">
+                                                    <a href="#" id="h2_tag" class="dis-block txt3 hov1 p-t-10 p-b-10" style="font-size:27px;">
+                                                        <i class="fa fa-long-arrow-down m-l-5"></i> h2 tag<i class="fa fa-long-arrow-down m-l-5"></i>
+                                                    </a>
+                                                    <span style="margin-left:5px;font-size:27px;">|</span>
+                                                    <a href="#" id="h3_tag" class="dis-block txt3 hov1 p-t-10 p-b-10" style="font-size:27px;">
+                                                        <i class="fa fa-long-arrow-down m-l-5"></i> h3 tag<i class="fa fa-long-arrow-down m-l-5"></i>
+                                                    </a>
+                                                    <span style="margin-left:5px;font-size:27px;">|</span>
+                                                    <a href="#" id="b_tag" class="dis-block txt3 hov1 p-t-10 p-b-10" style="font-size:27px;">
+                                                        <i class="fa fa-long-arrow-down m-l-5"></i> b tag<i class="fa fa-long-arrow-down m-l-5"></i>
+                                                    </a>
+                                                    <span style="margin-left:5px;font-size:27px;">|</span>
                                                     <a href="#" id="p_tag" class="dis-block txt3 hov1 p-t-10 p-b-10" style="font-size:27px;">
                                                         <i class="fa fa-long-arrow-down m-l-5"></i> p tag<i class="fa fa-long-arrow-down m-l-5"></i>
                                                     </a>
+                                                    <span style="margin-left:5px;font-size:27px;">|</span>
+                                                    <a href="#" id="p_color_red_tag" class="dis-block txt3 hov1 p-t-10 p-b-10" style="font-size:27px;">
+                                                        <i class="fa fa-long-arrow-down m-l-5"></i> p color red tag<i class="fa fa-long-arrow-down m-l-5"></i>
+                                                    </a>
                                                 </div>
-                                                <textarea class="input100" type="text" style="font-size:20px;" name="listening_details" id="listening_details" placeholder="Listening Details"><?=set_value('listening_details')?></textarea>
+                                                <textarea class="input100" type="text" style="font-size:20px;" name="grammar_details" id="grammar_details" placeholder="Grammar Details"><?php if(validation_errors() == false) { foreach ($dataunit as $value) { echo $value['grammar_details'];}}else{ ?><?=set_value('grammar_details')?><?php } ?></textarea>
                                                 <span class="focus-input100"></span>
 											</div>
 											<div class="container-contact100-form-btn">
@@ -290,30 +293,58 @@
         <script src="<?php echo base_url();?>vendors/dist/js/pages/chart/chart-page-init.js"></script>
 
         <script type="text/javascript">
-            $('.tag_listening_name a').click(function() {
+            $('.tag_grammar_name a').click(function() {
                 var value = '<h1></h1>';
-                var input = $('#listening_name');
+                var input = $('#grammar_name');
                 input.val(value);
                 input.focus();
                 input[0].setSelectionRange(value.length, value.length - 5);
                 return false;
             });
-            $('#p_tag').click(function() {
-                var value_p_tag = '<p></p>';
-                var input_listening = $('#listening_details');
-                input_listening.val(input_listening.val() + value_p_tag);
-                input_listening.focus();
-                var value_input_listening = input_listening.val();
-                input_listening[0].setSelectionRange(value_input_listening.length, value_input_listening.length - 4);
+            $('#h2_tag').click(function() {
+                var value_h2_tag = '<h2></h2>';
+                var input_grammar = $('#grammar_details');
+                input_grammar.val(input_grammar.val() + value_h2_tag);
+                input_grammar.focus();
+                var value_input_grammar = input_grammar.val();
+                input_grammar[0].setSelectionRange(value_input_grammar.length, value_input_grammar.length - 5);
                 return false;
             });
-            $(document).on("click", ".browse", function() {
-                var file = $(this).parent().parent().parent().find(".file");
-                file.trigger("click");
+            $('#h3_tag').click(function() {
+                var value_h3_tag = '<h3></h3>';
+                var input_grammar = $('#grammar_details');
+                input_grammar.val(input_grammar.val() + value_h3_tag);
+                input_grammar.focus();
+                var value_input_grammar = input_grammar.val();
+                input_grammar[0].setSelectionRange(value_input_grammar.length, value_input_grammar.length - 5);
+                return false;
             });
-            $(document).on("change", ".file", function() {
-                // $(this).parent().find(".form-control").val($(this).val().replace(/C:\\fakepath\\/i, ""));
-                $(this).parent().find(".form-control").val($(this).val());
+            $('#b_tag').click(function() {
+                var value_b_tag = '<b></b>';
+                var input_grammar = $('#grammar_details');
+                input_grammar.val(input_grammar.val() + value_b_tag);
+                input_grammar.focus();
+                var value_input_grammar = input_grammar.val();
+                input_grammar[0].setSelectionRange(value_input_grammar.length, value_input_grammar.length - 4);
+                return false;
+            });
+            $('#p_tag').click(function() {
+                var value_p_tag = '<p></p>';
+                var input_grammar = $('#grammar_details');
+                input_grammar.val(input_grammar.val() + value_p_tag);
+                input_grammar.focus();
+                var value_input_grammar = input_grammar.val();
+                input_grammar[0].setSelectionRange(value_input_grammar.length, value_input_grammar.length - 4);
+                return false;
+            });
+            $('#p_color_red_tag').click(function() {
+                var value_p_color_red_tag = '<p style="color:red;"></p>';
+                var input_grammar = $('#grammar_details');
+                input_grammar.val(input_grammar.val() + value_p_color_red_tag);
+                input_grammar.focus();
+                var value_input_grammar = input_grammar.val();
+                input_grammar[0].setSelectionRange(value_input_grammar.length, value_input_grammar.length - 4);
+                return false;
             });
         </script>
 

@@ -1,5 +1,5 @@
 <?php
-class CreateGrammarBeginner extends My_Controller {
+class CreateGrammarIntermediate extends My_Controller {
 
     function __construct(){
         parent::__construct();
@@ -19,7 +19,7 @@ class CreateGrammarBeginner extends My_Controller {
             $data['admin_flag'] = $getdata['admin_flag'];
         }
 
-        $this->load->view('creategrammarbeginner', $data);
+        $this->load->view('creategrammarintermediate', $data);
     }
 
     public function checkGrammar(){
@@ -37,12 +37,12 @@ class CreateGrammarBeginner extends My_Controller {
             $this->form_validation->set_error_delimiters('<p style="color:#d42a38">', '</p>');
 
             if ($this->form_validation->run() === TRUE){
-                $unit_id = $this->unit_model->getNextUnitBeginnerGrammar();
+                $unit_id = $this->unit_model->getNextUnitIntermediateGrammar();
                 $grammar_id = $this->admingrammar_model->getNextGrammarId();
 
                 $data = array(
                     'grammar_id' => $grammar_id,
-                    'level_id' => '1',
+                    'level_id' => '2',
                     'grammar_name' => $_POST['grammar_name'],
                     'grammar_details' => $_POST['grammar_details'],
                     'unit_id' => $unit_id,
@@ -53,10 +53,10 @@ class CreateGrammarBeginner extends My_Controller {
                 $this->db->insert('tbl_grammar', $data);
 
                 //Redirect to Admin Grammar Page
-                redirect('admingrammar/beginner', 'refresh');
+                redirect('admingrammar/intermediate', 'refresh');
             }
             else{
-                $this->load->view('creategrammarbeginner', $data);
+                $this->load->view('creategrammarintermediate', $data);
             }
         }
     }

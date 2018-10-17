@@ -25,7 +25,7 @@ class registration_model extends My_Model
     //get max user_id from m_user
     public function getMaxUserId()
     {
-        $this->db->select('max(user_id) user_id');
+        $this->db->select("CAST(coalesce(max(user_id), '0') AS integer) as user_id");
         $this->db->from('m_user');
         $query = $this->db->get();
         $result = $query->result_array();

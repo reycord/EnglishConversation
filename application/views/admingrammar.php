@@ -185,7 +185,7 @@
                                     <div class="row">
 									    <?php if(isset($admin_flag) && $admin_flag != 0) { ?>
 											<?php foreach ($datalevel as $value) { ?>
-												<a href="<?php echo base_url() . 'vocabulary/' . strtolower($value['level_name']); ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
+												<a href="<?php echo base_url() . 'admingrammar/' . strtolower($value['level_name']); ?>" class="col-12 col-sm-6 col-lg-4" style="margin-top: 20px;">
 													<div class="text-center" style="position:relative;z-index:1;padding:30px;border:1px solid #2b5c9a;border-radius:6px;">
 														<div class="icon">
 															<img src="<?php echo base_url() . $value['level_image']; ?>" alt="">
