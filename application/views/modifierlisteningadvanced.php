@@ -154,14 +154,14 @@
                 <div class="page-breadcrumb">
                     <div class="row">
                         <div class="col-12 d-flex no-block align-items-center">
-                            <h4 class="page-title">Create Listening Beginner</h4>
+                            <h4 class="page-title">Modifier Listening Advanced</h4>
                             <div class="ml-auto text-right">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
 										<li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminlistening">Admin Listening</a></li>
-                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminlistening/beginner">Beginner</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Creare Listening Beginner</li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminlistening">Admin Vocabulary</a></li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>adminlistening/advanced">Advanced</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Modifier Listening Advanced</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -185,11 +185,11 @@
                             <!-- card new -->
                             <div class="card">
                                 <ul class="list-style-none">
-									<?php if(isset($admin_flag) && $admin_flag != 0) { ?>
-										<form class="login100-form validate-form" action="<?php echo base_url('createlisteningbeginner/checkListening/')?>" method="POST" enctype="multipart/form-data">
+                                    <?php if(isset($admin_flag) && $admin_flag != 0) { ?>
+										<form class="login100-form validate-form" action="<?php echo base_url('modifierlisteningadvanced/checkListening/')?>" method="POST" enctype="multipart/form-data">
                                             <p style="color:#d42a38; text-align: center; width: 364px;"><?php echo (isset($err_message) ? $err_message : '') ?></p>
-                                            <?php echo form_error('mp3_file'); ?>
-											<div class="input-group wrap-input100">
+											<?php echo form_error('mp3_file'); ?>
+                                            <div class="input-group wrap-input100">
                                                 <div class="input-group-prepend">
 													<span class="input-group-text" style="font-size:20px;">Link File Mp3</span>
 												</div>
@@ -211,7 +211,7 @@
                                                         <i class="fa fa-long-arrow-down m-l-5"></i> h1 tag<i class="fa fa-long-arrow-down m-l-5"></i>
                                                     </a>
                                                 </div>
-                                                <input class="input100" type="text" name="listening_name" id="listening_name" value="<?=set_value('listening_name')?>" placeholder="Listening Name">
+                                                <input class="input100" type="text" name="listening_name" id="listening_name" value="<?php if(validation_errors() == false) { foreach ($dataunit as $value) { echo $value['listening_name'];}}else{ ?><?=set_value('listening_name')?><?php } ?>" placeholder="Listening Name">
                                                 <span class="focus-input100"></span>
 											</div>
 
@@ -225,7 +225,7 @@
                                                         <i class="fa fa-long-arrow-down m-l-5"></i> p tag<i class="fa fa-long-arrow-down m-l-5"></i>
                                                     </a>
                                                 </div>
-                                                <textarea class="input100" type="text" style="font-size:20px;" name="listening_details" id="listening_details" placeholder="Listening Details"><?=set_value('listening_details')?></textarea>
+                                                <textarea class="input100" type="text" style="font-size:20px;" name="listening_details" id="listening_details" placeholder="Listening Details"><?php if(validation_errors() == false) { foreach ($dataunit as $value) { echo $value['listening_details'];}}else{ ?><?=set_value('listening_details')?><?php } ?></textarea>
                                                 <span class="focus-input100"></span>
 											</div>
 											<div class="container-contact100-form-btn">
@@ -288,7 +288,6 @@
         <script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.crosshair.js"></script>
         <script src="<?php echo base_url();?>vendors/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
         <script src="<?php echo base_url();?>vendors/dist/js/pages/chart/chart-page-init.js"></script>
-
         <script type="text/javascript">
             $('.tag_listening_name a').click(function() {
                 var value = '<h1></h1>';
@@ -316,7 +315,6 @@
                 $(this).parent().find(".form-control").val($(this).val());
             });
         </script>
-
     </body>
 
 </html>

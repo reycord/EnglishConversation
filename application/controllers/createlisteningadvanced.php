@@ -1,5 +1,5 @@
 <?php
-class CreateListeningBeginner extends My_Controller {
+class CreateListeningAdvanced extends My_Controller {
 
     function __construct(){
         parent::__construct();
@@ -20,7 +20,7 @@ class CreateListeningBeginner extends My_Controller {
             $data['email'] = $getdata['email'];
             $data['admin_flag'] = $getdata['admin_flag'];
         }
-        $this->load->view('createlisteningbeginner', $data);
+        $this->load->view('createlisteningadvanced', $data);
     }
 
     public function checkListening(){
@@ -41,7 +41,7 @@ class CreateListeningBeginner extends My_Controller {
             $this->form_validation->set_rules('listening_details', 'Listening Details', 'trim|required');
             $this->form_validation->set_error_delimiters('<p style="color:#d42a38">', '</p>');
             if ($this->form_validation->run() === TRUE){
-                $config['upload_path'] = './vendors/assets/media/beginner/';
+                $config['upload_path'] = './vendors/assets/media/advanced/';
 
                 $config['allowed_types'] = '*';
                 $config['overwrite'] = TRUE;
@@ -55,14 +55,14 @@ class CreateListeningBeginner extends My_Controller {
                     $this->load->view('adminlistening', $data);
                 }else{
                     $data = array('upload_data' => $this->upload->data());
-                    $unit_id = $this->unit_model->getNextUnitBeginnerListening();
-                    $mp3_file = 'vendors/assets/media/beginner/' . $file;
+                    $unit_id = $this->unit_model->getNextUnitAdvancedListening();
+                    $mp3_file = 'vendors/assets/media/advanced/' . $file;
     
                     $listening_id = $this->adminlistening_model->getNextListeningId();
     
                     $data = array(
                         'listening_id' => $listening_id,
-                        'level_id' => '1',
+                        'level_id' => '3',
                         'listening_name' => $_POST['listening_name'],
                         'listening_details' => $_POST['listening_details'],
                         'link_media' => $mp3_file,
@@ -74,11 +74,11 @@ class CreateListeningBeginner extends My_Controller {
                     $this->db->insert('tbl_listening', $data);
     
                     //Redirect to Admin Listening Page
-                    redirect('adminlistening/beginner', 'refresh');
+                    redirect('adminlistening/advanced', 'refresh');
                 }
             }
             else{
-                $this->load->view('createlisteningbeginner', $data);
+                $this->load->view('createlisteningadvanced', $data);
             }
         }
     }

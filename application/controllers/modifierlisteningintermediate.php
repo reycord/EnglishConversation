@@ -1,5 +1,5 @@
 <?php
-class CreateListeningBeginner extends My_Controller {
+class ModifierListeningIntermediate extends My_Controller {
 
     function __construct(){
         parent::__construct();
@@ -14,22 +14,32 @@ class CreateListeningBeginner extends My_Controller {
     public function index()
     {
         $data = null;
+        $params = $_SERVER['QUERY_STRING'];
+        $splitURL = explode('=', $params)[1];
         if($this->session->userdata('user')) {
             $getdata = $this->session->userdata('user');
             $data['user_name'] = $getdata['user_name'];
             $data['email'] = $getdata['email'];
             $data['admin_flag'] = $getdata['admin_flag'];
+            $data['get_unit_id'] = $splitURL;
+            $this->session->set_userdata('user', $data);
         }
-        $this->load->view('createlisteningbeginner', $data);
+
+        $dataunit = $this->adminlistening_model->getDataListeningIntermediateWithUnitId($splitURL);
+        $data['dataunit'] = $dataunit;
+
+        $this->load->view('modifierlisteningintermediate', $data);
     }
 
     public function checkListening(){
         $data = null;
+        $data_unit = null;
         if($this->session->userdata('user')) {
             $getdata = $this->session->userdata('user');
             $data['user_name'] = $getdata['user_name'];
             $data['email'] = $getdata['email'];
             $data['admin_flag'] = $getdata['admin_flag'];
+            $data_unit = $getdata['get_unit_id'];
         }
         if (isset($_POST['submit'])){
             $file = $_FILES['mp3_file']['name'];
@@ -41,7 +51,7 @@ class CreateListeningBeginner extends My_Controller {
             $this->form_validation->set_rules('listening_details', 'Listening Details', 'trim|required');
             $this->form_validation->set_error_delimiters('<p style="color:#d42a38">', '</p>');
             if ($this->form_validation->run() === TRUE){
-                $config['upload_path'] = './vendors/assets/media/beginner/';
+                $config['upload_path'] = './vendors/assets/media/intermediate/';
 
                 $config['allowed_types'] = '*';
                 $config['overwrite'] = TRUE;
@@ -55,30 +65,33 @@ class CreateListeningBeginner extends My_Controller {
                     $this->load->view('adminlistening', $data);
                 }else{
                     $data = array('upload_data' => $this->upload->data());
-                    $unit_id = $this->unit_model->getNextUnitBeginnerListening();
-                    $mp3_file = 'vendors/assets/media/beginner/' . $file;
+                    $unit_id = $this->unit_model->getNextUnitIntermediateListening();
+                    $mp3_file = 'vendors/assets/media/intermediate/' . $file;
     
                     $listening_id = $this->adminlistening_model->getNextListeningId();
     
                     $data = array(
-                        'listening_id' => $listening_id,
-                        'level_id' => '1',
                         'listening_name' => $_POST['listening_name'],
                         'listening_details' => $_POST['listening_details'],
-                        'link_media' => $mp3_file,
-                        'unit_id' => $unit_id,
-                        'del_fg' => '0'
+                        'link_media' => $mp3_file
                     );
                     
-                    //Add data into table TBL_LISTENING
-                    $this->db->insert('tbl_listening', $data);
+                    $this->db->trans_begin();
+                    $this->db->where('level_id', '2');
+                    $this->db->where('unit_id', $data_unit);
+                    $this->db->update('tbl_listening', $data);
+                    if ($this->db->trans_status() === false){
+                        $this->db->trans_rollback();
+                    } else{
+                        $this->db->trans_commit();
+                    }
     
                     //Redirect to Admin Listening Page
-                    redirect('adminlistening/beginner', 'refresh');
+                    redirect('adminlistening/intermediate', 'refresh');
                 }
             }
             else{
-                $this->load->view('createlisteningbeginner', $data);
+                $this->load->view('modifierlisteningintermediate', $data);
             }
         }
     }
