@@ -89,7 +89,7 @@
                             <!-- ============================================================== -->
                             <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
                                 <form class="app-search position-absolute">
-                                    <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                                    <input type="text" class="typeahead form-control" autocomplete="off" name="search" id="search" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
                                 </form>
                             </li>
                         </ul>
@@ -182,75 +182,13 @@
                             <!-- card new -->
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title m-b-0">List Vocabulary</h4>
+                                    <?php if(isset($word_details) && $word_details != null) { ?>
+                                        <h2 class="card-title m-b-0"><?php echo $word_name;?></h2>
+                                        <h3 class="card-title m-b-0"><?php echo $word_details;?></h3>
+                                    <?php } else { ?>
+                                        <h4 class="card-title m-b-0">No data found</h4>
+                                    <?php } ?>
                                 </div>
-                                <ul class="list-style-none">
-                                    <li class="d-flex no-block card-body">
-                                        <i class="fa fa-check-circle w-30px m-t-5"></i>
-                                        <div>
-                                            <a href="#" class="m-b-0 font-medium p-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                                            <span class="text-muted">dolor sit amet, consectetur adipiscing</span>
-                                        </div>
-                                        <div class="ml-auto">
-                                            <div class="tetx-right">
-                                                <h5 class="text-muted m-b-0">20</h5>
-                                                <span class="text-muted font-16">Jan</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex no-block card-body border-top">
-                                        <i class="fa fa-gift w-30px m-t-5"></i>
-                                        <div>
-                                            <a href="#" class="m-b-0 font-medium p-0">Congratulation Maruti, Happy Birthday</a>
-                                            <span class="text-muted">many many happy returns of the day</span>
-                                        </div>
-                                        <div class="ml-auto">
-                                            <div class="tetx-right">
-                                                <h5 class="text-muted m-b-0">11</h5>
-                                                <span class="text-muted font-16">Jan</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex no-block card-body border-top">
-                                        <i class="fa fa-plus w-30px m-t-5"></i>
-                                        <div>
-                                            <a href="#" class="m-b-0 font-medium p-0">Maruti is a Responsive Admin theme</a>
-                                            <span class="text-muted">But already everything was solved. It will ...</span>
-                                        </div>
-                                        <div class="ml-auto">
-                                            <div class="tetx-right">
-                                                <h5 class="text-muted m-b-0">19</h5>
-                                                <span class="text-muted font-16">Jan</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex no-block card-body border-top">
-                                        <i class="fa fa-leaf w-30px m-t-5"></i>
-                                        <div>
-                                            <a href="#" class="m-b-0 font-medium p-0">Envato approved Maruti Admin template</a>
-                                            <span class="text-muted">i am very happy to approved by TF</span>
-                                        </div>
-                                        <div class="ml-auto">
-                                            <div class="tetx-right">
-                                                <h5 class="text-muted m-b-0">20</h5>
-                                                <span class="text-muted font-16">Jan</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex no-block card-body border-top">
-                                        <i class="fa fa-question-circle w-30px m-t-5"></i>
-                                        <div>
-                                            <a href="#" class="m-b-0 font-medium p-0"> I am alwayse here if you have any question</a>
-                                            <span class="text-muted">we glad that you choose our template</span>
-                                        </div>
-                                        <div class="ml-auto">
-                                            <div class="tetx-right">
-                                                <h5 class="text-muted m-b-0">15</h5>
-                                                <span class="text-muted font-16">Jan</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                         <!-- column -->
@@ -280,30 +218,27 @@
         <!-- ============================================================== -->
         <!-- All Jquery -->
         <!-- ============================================================== -->
-        <script src="<?php echo base_url();?>vendors/assets/libs/jquery/dist/jquery.min.js"></script>
-        <!-- Bootstrap tether Core JavaScript -->
-        <script src="<?php echo base_url();?>vendors/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+        <script src="<?php echo base_url();?>vendors/dist/js/jquery.js"></script>
+        <!--Typeahead -->
+        <script src="<?php echo base_url();?>vendors/dist/js/bootstrap3-typeahead.min.js"></script>
         <script src="<?php echo base_url();?>vendors/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="<?php echo base_url();?>vendors/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-        <script src="<?php echo base_url();?>vendors/assets/extra-libs/sparkline/sparkline.js"></script>
-        <!--Wave Effects -->
-        <script src="<?php echo base_url();?>vendors/dist/js/waves.js"></script>
         <!--Menu sidebar -->
         <script src="<?php echo base_url();?>vendors/dist/js/sidebarmenu.js"></script>
         <!--Custom JavaScript -->
         <script src="<?php echo base_url();?>vendors/dist/js/custom.min.js"></script>
-        <!--This page JavaScript -->
-        <!-- <script src="<?php echo base_url();?>vendors/dist/js/pages/dashboards/dashboard1.js"></script> -->
-        <!-- Charts js Files -->
-        <script src="<?php echo base_url();?>vendors/assets/libs/flot/excanvas.js"></script>
-        <script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.js"></script>
-        <script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.pie.js"></script>
-        <script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.time.js"></script>
-        <script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.stack.js"></script>
-        <script src="<?php echo base_url();?>vendors/assets/libs/flot/jquery.flot.crosshair.js"></script>
-        <script src="<?php echo base_url();?>vendors/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
-        <script src="<?php echo base_url();?>vendors/dist/js/pages/chart/chart-page-init.js"></script>
-
+        
+        <script type="text/javascript">
+            $('input.typeahead').typeahead({
+                source:  function (query, process) {
+                    return $.get('index/getWordName', { query: query }, function (data) {
+                        console.log(data);
+                        data = $.parseJSON(data);
+                        return process(data);
+                    });
+                }
+            });
+        </script>
     </body>
 
 </html>
