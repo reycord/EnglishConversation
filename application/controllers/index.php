@@ -4,6 +4,7 @@ class Index extends My_Controller {
     function __construct(){
         parent::__construct();
         $this->load->library('session');
+        $this->load->model('search_model');
     }
 
     public function index()
@@ -19,13 +20,11 @@ class Index extends My_Controller {
         if (strpos($params, 'search=') !== false) {
             $splitURL = explode('search=', $params)[1];
             $splitURL = utf8_decode(urldecode($splitURL));
-            $this->db->select('word_details');
-            $this->db->from('tbl_word_dictionary');
-            $this->db->where('word_name', $splitURL);
-            $query = $this->db->get();
-            $result = $query->result_array();
-            $data['word_name'] = $splitURL;
-            $data['word_details'] = $result[0]['word_details'];
+            $result = $this->search_model->getDetailsWord($splitURL);
+            if($result != null){
+                $data['word_name'] = $splitURL;
+                $data['word_details'] = $result[0]['word_details'];
+            }
         }
         $this->load->view('index', $data);
     }
@@ -42,11 +41,7 @@ class Index extends My_Controller {
 
     public function getWordName(){
         $keyword = $this->input->get('query');
-        $this->db->select('word_name');
-        $this->db->from('tbl_word_dictionary');
-        $this->db->like('word_name', $keyword);
-        $query = $this->db->get();
-        $hasil = $query->result();
+        $hasil = $this->search_model->getWord($keyword);
         $data = array();
         foreach ($hasil as $hsl)
         {
