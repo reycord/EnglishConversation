@@ -20,7 +20,7 @@ class Index extends My_Controller {
         if (strpos($params, 'search=') !== false) {
             $splitURL = explode('search=', $params)[1];
             $splitURL = utf8_decode(urldecode($splitURL));
-            $result = $this->search_model->getDetailsWord($splitURL);
+            $result = $this->search_model->getDetailsWord(trim($splitURL));
             if($result != null){
                 $data['word_name'] = $splitURL;
                 $data['word_details'] = $result[0]['word_details'];
